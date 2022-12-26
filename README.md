@@ -21,3 +21,18 @@ routers
 services
 views
 server
+
+url 정리부터
+/ main >> user login & board list & user profile
+
+/ board / write >> view
+/ board / view ? // modify, delete
+/ board / modify >> view
+/ board / delete >> list
+/ board / list >> view
+
+/ user / join >> welcome
+/ user / login >> main
+/ user / profile >> profile
+/ user / welcome >> login
+
