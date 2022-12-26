@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR";
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.inner {
+  width: 1180px;
+  margin: 0 auto;
+}
+
+#wrap {
+  width: 100%;
+  background-color: #eef1ff;
+}
+
+#header {
+  width: 100%;
+  height: 80px;
+  background-color: #b1b2ff;
+}
+
+#header > .inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+#logo_board {
+  display: flex;
+  justify-content: space-between;
+  width: 380px;
+}
+
+#logo_board > div {
+  width: 180px;
+}
+
+#logo_board > #board_btn {
+  text-align: center;
+}
+
+#logo_board > #board_btn > a {
+  display: inline-block;
+  padding: 22px 0;
+  width: 100%;
+  height: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#login_join {
+  display: flex;
+  padding: 20px;
+}
+
+#login_join > #login_btn {
+  display: inline-block;
+  margin: 9px 20px 9px;
+  color: #fff;
+  font-weight: bold;
+}
+
+#login_join > #join_btn {
+  display: inline-block;
+  padding: 9px 22px;
+  border-radius: 50px;
+  text-align: center;
+  width: 100px;
+  height: 40px;
+  line-height: 22px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #9a62e6;
+}
+
+#login_join > #join_btn:hover {
+  background-color: #8f00ff;
+  transition: all 0.5s ease;
+}
+
+#slide {
+  margin-top: 80px;
+}
+
+#slide > .inner {
+  position: relative;
+}
+
+#slide_box {
+  width: 100%;
+  height: 380px;
+}
+
+#slide_box > img {
+  position: absolute;
+}
+
+#start_stop_btn {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 20px;
+  bottom: 20px;
+  background: url("../img/stop_btn.svg");
+}
+
+#slide_now_box {
+  position: absolute;
+  width: 140px;
+  height: 20px;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  font-size: 0;
+}
+#slide_now_box > a {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+#slide_now_box > a:not(:last-child) {
+  margin-right: 20px;
+}
+
+#slide_now_box > #slide_left_btn {
+  background: url("../img/slide_left.svg") no-repeat;
+}
+
+#slide_now_box > .circle {
+  background: url("../img/slide_circle.svg");
+  cursor: default;
+}
+
+#slide_now_box > #slide_right_btn {
+  background: url("../img/slide_right.svg") no-repeat;
+}
+
+#content {
+  margin-top: 80px;
+  padding-bottom: 80px;
+}
+
+#content_box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#member_box {
+  width: 380px;
+  height: 380px;
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#member_box > #member_header {
+  padding: 26px 20px;
+  height: 95px;
+  border-radius: 10px 10px 0 0;
+  background-color: #b1b2ff;
+  color: #fff;
+}
+
+.member {
+  padding: 26px 20px;
+  height: 95px;
+}
+
+.member:not(:last-child) {
+  border-bottom: 1px solid #d2daff;
+}
+
+#popular_box {
+  width: 780px;
+  height: 380px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+#popular_box > #popular_header {
+  padding: 26px 20px;
+  height: 95px;
+  border-radius: 10px 10px 0 0;
+  background-color: #b1b2ff;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#popular_box > #popular_header > a {
+  color: #fff;
+}
+
+#popular_box > .pupular_contents {
+  display: flex;
+  padding: 33px 20px;
+  height: 95px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#popular_box > :not(:nth-child(4)) {
+  border-bottom: 1px solid #d2daff;
+}
+
+/* 6:2:1:1 */
+#popular_box > .pupular_contents > #title {
+  width: 50%;
+}
+
+#popular_box > .pupular_contents > #writer {
+  text-align: center;
+  width: 15%;
+}
+
+#popular_box > .pupular_contents > #date {
+  text-align: center;
+  width: 15%;
+}
+
+#popular_box > .pupular_contents > #views {
+  text-align: center;
+  width: 20%;
+}
+
+#skill {
+  margin-top: 80px;
+  padding-bottom: 80px;
+}
+
+#skill_box {
+  width: 100%;
+  height: 380px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+#skill_box > #skill_header {
+  padding: 26px 20px;
+  width: 100%;
+  height: 95px;
+  background-color: #b1b2ff;
+  border-radius: 10px 10px 0 0;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#skill_box > #skill_content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+#footer {
+  height: 200px;
+  background-color: #d2daff;
+  padding: 60.56px 0px 43.82px 0px;
+}
+
+#footer > .inner {
+  display: flex;
+}
+
+#footer_logo {
+  width: 180px;
+}
+
+#footer_contents_box {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#footer_contents_box > div:not(:last-child) {
+  margin-bottom: 10px;
+}
