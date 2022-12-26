@@ -51,78 +51,23 @@
                                 <th>등록일</th>
                                 <th>조회수</th>
                             </tr>
+                            {% for item in list %}
                             <tr id="subject">
-                                <td>1</td>
+                                <td>{{item.idx}}</td>
                                 <td class="title">
-                                    <a href="#">1번제목</a>
+                                    <a href="/list?index=0">{{item.subject}}</a>
                                 </td>
-                                <td>작성자1</td>
-                                <td>22.12.25</td>
-                                <td>5</td>
+                                <td>{{item.writer}}</td>
+                                <td>{{item.registerDate}}</td>
+                                <td>{{item.hit}}</td>
                             </tr>
+                            {% endfor %}
                             <tr id="subject">
                                 <td>2</td>
                                 <td class="title">2번 제목입니다</td>
                                 <td>작성자2</td>
                                 <td>22.12.25</td>
                                 <td>1</td>
-                            </tr>
-                            <tr id="subject">
-                                <td>3</td>
-                                <td class="title">3번 제목입니다</td>
-                                <td>작성자3</td>
-                                <td>22.12.25</td>
-                                <td>0</td>
-                            </tr>
-                            <tr id="subject">
-                                <td>4</td>
-                                <td class="title">4번 제목입니다</td>
-                                <td>작성자4</td>
-                                <td>22.12.25</td>
-                                <td>12</td>
-                            </tr>
-                            <tr id="subject">
-                                <td>5</td>
-                                <td class="title">5번 제목입니다</td>
-                                <td>작성자5</td>
-                                <td>22.12.25</td>
-                                <td>245</td>
-                            </tr>
-                            <tr id="subject">
-                                <td>6</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr id="subject">
-                                <td>7</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr id="subject">
-                                <td>8</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr id="subject">
-                                <td>9</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr id="subject">
-                                <td>10</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
                         </tbody>
                     </table>
                     <!-- 게시판 리스트 끝 -->
