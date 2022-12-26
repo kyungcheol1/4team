@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="../../public/css/board/header.css" rel="stylesheet" />
+        <link href="../../public/css/board/write.css" rel="stylesheet" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div id="wrap">
+            <!-- 헤더 -->
+            <div id="header">
+                <div class="inner">
+                    <h1 id="logo">
+                        <img src="../../public/img/Logo.png" />
+                    </h1>
+                    <div id="menu">
+                        <ul>
+                            <li><a href="#">게시판</a></li>
+                        </ul>
+                    </div>
+                    <div id="user">
+                        <ul>
+                            <li><a href="#">회원정보</a></li>
+                            <li><a href="#">로그아웃</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 컨텐츠 -->
+            <div id="contents">
+                <div class="inner">
+                    <h1>게시판</h1>
+                    <div id="boardContent">
+                        <div id="top"><h4>글쓰기</h4></div>
+                        <div id="writeContent">
+                            <form method="post" action="/write">
+                                <ul>
+                                    <li>
+                                        <input
+                                            type="text"
+                                            name="title"
+                                            vlaue="{{items.title}}"
+                                        />
+                                    </li>
+                                    <li>
+                                        <br />
+                                        <textarea
+                                            name="content"
+                                            vlaue="{{items.content}}"
+                                        ></textarea>
+                                    </li>
+                                </ul>
+                                <button id="cancelBtn" type="submit">
+                                    취소
+                                </button>
+                                <button id="submitBtn" type="submit">
+                                    등록
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

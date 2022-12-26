@@ -1,0 +1,57 @@
+form > ul > li {
+    width: 80%;
+    margin: 20px auto;
+}
+
+form > ul > li > input {
+    margin-top: 20px;
+    height: 30px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ececec;
+    font-size: 25px;
+}
+
+form > ul > li > textarea {
+    width: 100%;
+    height: 400px;
+    resize: none;
+    border: #ececec solid 2px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+button {
+    width: 90px;
+    height: 50px;
+    margin-bottom: 30px;
+
+    font-family: "Noto Sans KR";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    color: white;
+
+    background: #9a62e6;
+    border-radius: 7px;
+    border: 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#cancelBtn {
+    float: left;
+    margin-left: 120px;
+}
+
+#submitBtn {
+    float: right;
+    margin-right: 120px;
+}
