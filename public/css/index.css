@@ -97,15 +97,13 @@ a {
 
 #slide > .inner {
   position: relative;
+  overflow: hidden;
 }
 
 #slide_box {
   width: 100%;
   height: 380px;
-}
-
-#slide_box > img {
-  position: absolute;
+  display: flex;
 }
 
 #start_stop_btn {
@@ -115,6 +113,10 @@ a {
   left: 20px;
   bottom: 20px;
   background: url("../img/stop_btn.svg");
+}
+
+#start_stop_btn.stop {
+  background: url("../img/start_btn.svg");
 }
 
 #slide_now_box {
@@ -143,6 +145,10 @@ a {
 #slide_now_box > .circle {
   background: url("../img/slide_circle.svg");
   cursor: default;
+}
+
+#slide_now_box > .circle.active {
+  background: url("../img/slide_circle_now.svg");
 }
 
 #slide_now_box > #slide_right_btn {
