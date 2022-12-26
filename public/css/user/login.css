@@ -132,6 +132,10 @@ a {
     color: white;
 }
 
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > form > ul > li > button:hover {
+    background-color: #6163ff;
+}
+
 #visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > form > ul > li > a > button {
     width: 100%;
     height: 100%;
@@ -141,5 +145,9 @@ a {
     border: none;
     cursor: pointer;
     color: white;
+}
+
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > form > ul > li > a > button:hover {
+    background-color: #8f00ff;
 }
 

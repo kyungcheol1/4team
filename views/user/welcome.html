@@ -4,8 +4,8 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="../../public/css/user/login.css" />
+        <title>Welcome</title>
+        <link rel="stylesheet" href="../../public/css/user/welcome.css" />
     </head>
     <body>
         <div id="wrap">
@@ -15,6 +15,47 @@
                         <a href="">
                             <img src="/projectTeam4/public/img/Logo.png" alt="" />
                         </a>
+                    </div>
+                </div>
+            </div>
+            <div id="visual">
+                <div class="inner">
+                    <div id="welcome">
+                        <div id="welcomeHead">
+                            <h2>welcome</h2>
+                        </div>
+                        <div id="content">
+                            <h3>
+                                {{userNickname}}님을 환영합니다!
+                                <span>입력한 내용을 확인해주세요.</span>
+                            </h3>
+                            <ul>
+                                <li>
+                                    <p>아이디</p>
+                                    <div>{{userId}}</div>
+                                </li>
+                                <li>
+                                    <p>이름</p>
+                                    <div>{{userName}}</div>
+                                </li>
+                                <li>
+                                    <p>성별</p>
+                                    <div>{{userGender}}</div>
+                                </li>
+                                <li id="phone">
+                                    <p>휴대전화</p>
+                                    <ul>
+                                        <li>{{userPhone}}</li>
+                                        <li>{{Middle}}</li>
+                                        <li>{{Last}}</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div id="btns">
+                                <a href="/main">메인으로</a>
+                                <a href="./login.html">로그인 페이지로</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
