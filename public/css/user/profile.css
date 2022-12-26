@@ -37,34 +37,34 @@ a {
     justify-content: center;
 }
 
-#visual > .inner > #join {
+#visual > .inner > #profile {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#visual > .inner > #join > h2 {
+#visual > .inner > #profile > h2 {
     font-size: 40px;
     padding: 40px 0 40px 0;
     text-align: center;
 }
 
-#visual > .inner > #join > #textSpace {
+#visual > .inner > #profile > #textSpace {
     padding: 10px 0;
 }
 
-#visual > .inner > #join > #textSpace > form > ul > li {
+#visual > .inner > #profile > #textSpace > form > ul > li {
     margin: 40px 0;
     width: 580px;
     height: 89px;
 }
 
-#visual > .inner > #join > #textSpace > form > ul > li > p {
+#visual > .inner > #profile > #textSpace > form > ul > li > p {
     font-size: 20px;
     font-weight: 700;
 }
 
-#visual > .inner > #join > #textSpace > form > ul > li > input {
+#visual > .inner > #profile > #textSpace > form > ul > li > input {
     margin: 10px 0;
     width: 580px;
     height: 50px;
@@ -74,7 +74,7 @@ a {
     font-size: 20px;
 }
 
-#visual > .inner > #join > #textSpace > form > ul > li > select {
+#visual > .inner > #profile > #textSpace > form > ul > li > select {
     margin: 10px 0;
     width: 580px;
     height: 50px;
@@ -88,39 +88,39 @@ a {
     background-color: white;
 }
 
-#visual > .inner > #join > #textSpace > form > ul > .userId {
+#visual > .inner > #profile > #textSpace > form > ul > .fixed {
     margin-top: 0;
 }
 
-#visual > .inner > #join > #textSpace > form > ul > .userId > input {
+#visual > .inner > #profile > #textSpace > form > ul > .fixed > div {
+    margin: 10px 0;
+    width: 580px;
+    height: 50px;
+    border-radius: 7px;
+    border: none;
+    padding: 10px 0 10px 20px;
+    font-size: 20px;
+    background: #d2daff;
+}
+
+#visual > .inner > #profile > #textSpace > form > ul > .userNick > input {
     width: 370px;
     margin-right: 20px;
 }
 
-#visual > .inner > #join > #textSpace > form > ul > .userId > button {
+#visual > .inner > #profile > #textSpace > form > ul > .userNick > button {
     margin-top: 10px;
     height: 50px;
     width: 180px;
 }
 
-#visual > .inner > #join > #textSpace > form > ul > .userNick > input {
-    width: 370px;
-    margin-right: 20px;
-}
-
-#visual > .inner > #join > #textSpace > form > ul > .userNick > button {
-    margin-top: 10px;
-    height: 50px;
-    width: 180px;
-}
-
-#visual > .inner > #join > #textSpace > form > ul > #userBirth > div {
+#visual > .inner > #profile > #textSpace > form > ul > #userBirth > div {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
 
-#visual > .inner > #join > #textSpace > form > ul > #userBirth > div > input {
+#visual > .inner > #profile > #textSpace > form > ul > #userBirth > div > input {
     width: 180px;
     height: 50px;
     border-radius: 7px;
@@ -129,7 +129,7 @@ a {
     font-size: 20px;
 }
 
-#visual > .inner > #join > #textSpace > form > ul > #userBirth > div > select {
+#visual > .inner > #profile > #textSpace > form > ul > #userBirth > div > select {
     width: 180px;
     height: 50px;
     border-radius: 7px;
@@ -142,13 +142,13 @@ a {
     background-color: white;
 }
 
-#visual > .inner > #join > #textSpace > form > ul > .phone > div {
+#visual > .inner > #profile > #textSpace > form > ul > .phone > div {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
 
-#visual > .inner > #join > #textSpace > form > ul > .phone > div > input {
+#visual > .inner > #profile > #textSpace > form > ul > .phone > div > input {
     width: 180px;
     height: 50px;
     border-radius: 7px;
@@ -157,7 +157,7 @@ a {
     font-size: 20px;
 }
 
-#visual > .inner > #join > #textSpace > form > ul > li > button {
+#visual > .inner > #profile > #textSpace > form > ul > li > button {
     margin-top: 20px;
     width: 580px;
     height: 60px;
@@ -169,7 +169,7 @@ a {
     cursor: pointer;
 }
 
-#visual > .inner > #join > #textSpace > form > ul > li > button:hover {
+#visual > .inner > #profile > #textSpace > form > ul > li > button:hover {
     background-color: #8f00ff;
 }
 

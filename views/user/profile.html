@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>profile</title>
-        <link rel="stylesheet" href="../../public/css/user/join.css" />
+        <link rel="stylesheet" href="../../public/css/user/profile.css" />
     </head>
     <body>
         <div id="wrap">
@@ -25,33 +25,32 @@
                         <div id="textSpace">
                             <form>
                                 <ul>
-                                    <li class="userId">
+                                    <li class="fixed">
                                         <p>아이디</p>
-                                        <input type="text" name="userId" placeholder="아이디를 입력해주세요" />
-                                        <button>중복확인</button>
+                                        <div>{{userId}}</div>
                                     </li>
                                     <li>
                                         <p>비밀번호</p>
-                                        <input type="password" name="userPw" placeholder="비밀번호를 입력해주세요" />
+                                        <input type="password" name="userPw" placeholder="새로운 비밀번호를 입력해주세요" />
                                     </li>
                                     <li>
                                         <p>비밀번호 확인</p>
                                         <input type="password" name="userRpw" placeholder="비밀번호를 다시 입력해주세요" />
                                     </li>
-                                    <li>
+                                    <li class="fixed">
                                         <p>이름</p>
-                                        <input type="text" name="userName" placeholder="이름을 입력해주세요" />
+                                        <div>{{userName}}</div>
                                     </li>
                                     <li class="userNick">
                                         <p>닉네임</p>
-                                        <input type="text" name="userNickname" placeholder="닉네임 입력해주세요" />
+                                        <input type="text" name="userNickname" placeholder="새로운 닉네임 입력해주세요" value="{{userNickname}}" />
                                         <button>중복확인</button>
                                     </li>
                                     <li id="userBirth">
                                         <p>생년월일</p>
                                         <div>
-                                            <input type="text" name="userBirthyy" placeholder="년(4자)" />
-                                            <select name="userBirthmm" id="">
+                                            <input type="text" name="userBirthyy" placeholder="년(4자)" vlaue="{{userBirthyy}}" />
+                                            <select name="userBirthmm" id="" value="{{userBirthmm}}">
                                                 <option value="1">1월</option>
                                                 <option value="2">2월</option>
                                                 <option value="3">3월</option>
@@ -65,12 +64,12 @@
                                                 <option value="11">11월</option>
                                                 <option value="12">12월</option>
                                             </select>
-                                            <input type="text" name="userBirthdd" placeholder="일" />
+                                            <input type="text" name="userBirthdd" placeholder="일" value="{{userBirthdd}}" />
                                         </div>
                                     </li>
                                     <li>
                                         <p>성별</p>
-                                        <select name="userGender" id="">
+                                        <select name="userGender" id="" value="{{userGender}}">
                                             <option value="남자">남자</option>
                                             <option value="여자">여자</option>
                                         </select>
@@ -78,21 +77,21 @@
                                     <li class="phone">
                                         <p>휴대전화</p>
                                         <div>
-                                            <input type="text" name="userPhone" />
-                                            <input type="text" name="userPhoneMiddle" />
-                                            <input type="text" name="userPhoneLast" />
+                                            <input type="text" name="userPhone" value="{{userPhone}}" />
+                                            <input type="text" name="userPhoneMiddle" value="{{userPhoneMiddle}}" />
+                                            <input type="text" name="userPhoneLast" value="{{userPhoneLast}}" />
                                         </div>
                                     </li>
                                     <li class="phone">
                                         <p>일반전화(선택)</p>
                                         <div>
-                                            <input type="text" name="userCall" />
-                                            <input type="text" name="userCallMiddle" />
-                                            <input type="text" name="userCallLast" />
+                                            <input type="text" name="userCall" value="{{userCall}}" />
+                                            <input type="text" name="userCallMiddle" value="{{userCallMiddle}}" />
+                                            <input type="text" name="userCallLast" value="{{userCallLast}}" />
                                         </div>
                                     </li>
                                     <li>
-                                        <button type="submit">가입하기</button>
+                                        <button type="submit">수정하기</button>
                                     </li>
                                 </ul>
                             </form>
