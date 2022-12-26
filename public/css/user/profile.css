@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans KR";
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#wrap {
+    width: 100%;
+    height: 2000px;
+    background-color: #eef1ff;
+}
+
+#header {
+    width: 100%;
+    height: 80px;
+    background-color: #b1b2ff;
+}
+
+.inner {
+    width: 1180px;
+    margin: 0 auto;
+}
+
+#header > .inner > #head {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#visual > .inner > #profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#visual > .inner > #profile > h2 {
+    font-size: 40px;
+    padding: 40px 0 40px 0;
+    text-align: center;
+}
+
+#visual > .inner > #profile > #textSpace {
+    padding: 10px 0;
+}
+
+#visual > .inner > #profile > #textSpace > form > ul > li {
+    margin: 40px 0;
+    width: 580px;
+    height: 89px;
+}
+
+#visual > .inner > #profile > #textSpace > form > ul > li > p {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#visual > .inner > #profile > #textSpace > form > ul > li > input {
+    margin: 10px 0;
+    width: 580px;
+    height: 50px;
+    border-radius: 7px;
+    border: none;
+    padding: 0 0 0 20px;
+    font-size: 20px;
+}
+
+#visual > .inner > #profile > #textSpace > form > ul > li > select {
+    margin: 10px 0;
+    width: 580px;
+    height: 50px;
+    border-radius: 7px;
+    border: none;
+    padding: 0 0 0 20px;
+    font-size: 20px;
+    appearance: none;
+    background: url("/projectTeam4/public/img/Polygon3.svg") no-repeat 95% 50%;
+    background-size: 16px 16px;
+    background-color: white;
+}
+
+#visual > .inner > #profile > #textSpace > form > ul > .fixed {
+    margin-top: 0;
+}
+
+#visual > .inner > #profile > #textSpace > form > ul > .fixed > div {
+    margin: 10px 0;
+    width: 580px;
+    height: 50px;
+    border-radius: 7px;
+    border: none;
+    padding: 10px 0 10px 20px;
+    font-size: 20px;
+    background: #d2daff;
+}
+
+#visual > .inner > #profile > #textSpace > form > ul > .userNick > input {
+    width: 370px;
+    margin-right: 20px;
+}
+
+#visual > .inner > #profile > #textSpace > form > ul > .userNick > button {
+    margin-top: 10px;
+    height: 50px;
+    width: 180px;
+}
+
+#visual > .inner > #profile > #textSpace > form > ul > #userBirth > div {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#visual > .inner > #profile > #textSpace > form > ul > #userBirth > div > input {
+    width: 180px;
+    height: 50px;
+    border-radius: 7px;
+    border: none;
+    padding: 0 0 0 20px;
+    font-size: 20px;
+}
+
+#visual > .inner > #profile > #textSpace > form > ul > #userBirth > div > select {
+    width: 180px;
+    height: 50px;
+    border-radius: 7px;
+    border: none;
+    padding: 0 0 0 20px;
+    font-size: 20px;
+    appearance: none;
+    background: url("/projectTeam4/public/img/Polygon3.svg") no-repeat 90% 50%;
+    background-size: 16px 16px;
+    background-color: white;
+}
+
+#visual > .inner > #profile > #textSpace > form > ul > .phone > div {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#visual > .inner > #profile > #textSpace > form > ul > .phone > div > input {
+    width: 180px;
+    height: 50px;
+    border-radius: 7px;
+    border: none;
+    padding: 0 0 0 20px;
+    font-size: 20px;
+}
+
+#visual > .inner > #profile > #textSpace > form > ul > li > button {
+    margin-top: 20px;
+    width: 580px;
+    height: 60px;
+    border-radius: 7px;
+    color: white;
+    background-color: #9a62e6;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#visual > .inner > #profile > #textSpace > form > ul > li > button:hover {
+    background-color: #8f00ff;
+}
+

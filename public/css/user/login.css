@@ -1,6 +1,8 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans KR";
 }
 
 ul,
@@ -16,5 +18,136 @@ a {
     width: 100%;
     height: 2000px;
     background-color: #eef1ff;
+}
+
+#header {
+    width: 100%;
+    height: 80px;
+    background-color: #b1b2ff;
+}
+
+.inner {
+    width: 1180px;
+    margin: 0 auto;
+}
+
+#header > .inner > #head {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#visual > .inner > #visualWrap {
+    margin-top: 120px;
+    border-radius: 7px;
+    border: 1px solid #b1b2ff;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+#visual > .inner > #visualWrap > #visualHead {
+    background-color: #b1b2ff;
+    color: white;
+    padding: 17px 0 11px 0;
+    height: 100px;
+}
+
+#visual > .inner > #visualWrap > #visualHead > h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+#visual > .inner > #visualWrap > #visualSpace {
+    display: flex;
+    width: 100%;
+    height: 450px;
+    justify-content: center;
+}
+
+#visual > .inner > #visualWrap > #visualSpace > #loginImg {
+    width: 400px;
+    height: 100%;
+    background-color: #fff;
+}
+
+#visual > .inner > #visualWrap > #visualSpace > #loginBox {
+    width: 780px;
+    height: 100%;
+    padding: 20px;
+}
+
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    width: 700px;
+    height: 400px;
+}
+
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > h3 {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > form > ul > li {
+    width: 580px;
+    height: 50px;
+    margin: 14px 0;
+    background: #eef1ff;
+    border-radius: 7px;
+    border: 1px solid #b1b2ff;
+    overflow: hidden;
+}
+
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > form > ul > li > span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 44px;
+    border-right: 1px solid #fff;
+    background: #fff;
+}
+
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > form > ul > li > input {
+    border: none;
+    height: 30px;
+    width: 510px;
+    margin: 5px;
+    font-size: 20px;
+    background-color: #eef1ff;
+}
+
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > form > ul > li > button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #b1b2ff;
+    color: white;
+}
+
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > form > ul > li > button:hover {
+    background-color: #6163ff;
+}
+
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > form > ul > li > a > button {
+    width: 100%;
+    height: 100%;
+    background-color: #9a62e6;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > form > ul > li > a > button:hover {
+    background-color: #8f00ff;
 }
 

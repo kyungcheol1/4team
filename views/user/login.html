@@ -4,22 +4,46 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>login</title>
         <link rel="stylesheet" href="../../public/css/user/login.css" />
     </head>
     <body>
         <div id="wrap">
             <div id="header">
                 <div class="inner">
-                    <a href="">
-                        <img src="/projectTeam4/public/img/Logo.png" alt="" />
-                    </a>
+                    <div id="head">
+                        <a href="">
+                            <img src="/projectTeam4/public/img/Logo.png" alt="" />
+                        </a>
+                    </div>
                 </div>
             </div>
             <div id="visual">
                 <div class="inner">
-                    <div id="login">
-                        <div id></div>
+                    <div id="visualWrap">
+                        <div id="visualHead">
+                            <h1>로그인</h1>
+                        </div>
+                        <div id="visualSpace">
+                            <div id="loginImg">
+                                <img src="/projectTeam4/public/img/Logo.png" alt="" />
+                            </div>
+                            <div id="loginBox">
+                                <div id="loginInput">
+                                    <h3>로그인</h3>
+                                    <form method="post" action="/user/login">
+                                        <ul>
+                                            <li><span>ID</span><input type="text" name="userId" /></li>
+                                            <li><span>PW</span><input type="password" name="userPw" /></li>
+                                            <li><button type="submit">로그인</button></li>
+                                            <li>
+                                                <a href="/user/join"><button>회원가입</button></a>
+                                            </li>
+                                        </ul>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

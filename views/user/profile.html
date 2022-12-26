@@ -4,11 +4,104 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>profile</title>
+        <link rel="stylesheet" href="../../public/css/user/profile.css" />
     </head>
     <body>
-        <div id="header">
-            <h1>LOGO</h1>
+        <div id="wrap">
+            <div id="header">
+                <div class="inner">
+                    <div id="head">
+                        <a href="">
+                            <img src="/projectTeam4/public/img/Logo.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="visual">
+                <div class="inner">
+                    <div id="profile">
+                        <h2>Profile</h2>
+                        <div id="textSpace">
+                            <form>
+                                <ul>
+                                    <li class="fixed">
+                                        <p>아이디</p>
+                                        <div>{{userId}}</div>
+                                    </li>
+                                    <li>
+                                        <p>비밀번호</p>
+                                        <input type="password" name="userPw" placeholder="새로운 비밀번호를 입력해주세요" />
+                                    </li>
+                                    <li>
+                                        <p>비밀번호 확인</p>
+                                        <input type="password" name="userRpw" placeholder="비밀번호를 다시 입력해주세요" />
+                                    </li>
+                                    <li class="fixed">
+                                        <p>이름</p>
+                                        <div>{{userName}}</div>
+                                    </li>
+                                    <li class="userNick">
+                                        <p>닉네임</p>
+                                        <input type="text" name="userNickname" placeholder="새로운 닉네임 입력해주세요" value="{{userNickname}}" />
+                                        <button>중복확인</button>
+                                    </li>
+                                    <li id="userBirth">
+                                        <p>생년월일</p>
+                                        <div>
+                                            <input type="text" name="userBirthyy" placeholder="년(4자)" vlaue="{{userBirthyy}}" />
+                                            <select name="userBirthmm" id="" value="{{userBirthmm}}">
+                                                <option value="1">1월</option>
+                                                <option value="2">2월</option>
+                                                <option value="3">3월</option>
+                                                <option value="4">4월</option>
+                                                <option value="5">5월</option>
+                                                <option value="6">6월</option>
+                                                <option value="7">7월</option>
+                                                <option value="8">8월</option>
+                                                <option value="9">9월</option>
+                                                <option value="10">10월</option>
+                                                <option value="11">11월</option>
+                                                <option value="12">12월</option>
+                                            </select>
+                                            <input type="text" name="userBirthdd" placeholder="일" value="{{userBirthdd}}" />
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p>성별</p>
+                                        <select name="userGender" id="" value="{{userGender}}">
+                                            <option value="남자">남자</option>
+                                            <option value="여자">여자</option>
+                                        </select>
+                                    </li>
+                                    <li class="phone">
+                                        <p>휴대전화</p>
+                                        <div>
+                                            <input type="text" name="userPhone" value="{{userPhone}}" />
+                                            <input type="text" name="userPhoneMiddle" value="{{userPhoneMiddle}}" />
+                                            <input type="text" name="userPhoneLast" value="{{userPhoneLast}}" />
+                                        </div>
+                                    </li>
+                                    <li class="phone">
+                                        <p>일반전화(선택)</p>
+                                        <div>
+                                            <input type="text" name="userCall" value="{{userCall}}" />
+                                            <input type="text" name="userCallMiddle" value="{{userCallMiddle}}" />
+                                            <input type="text" name="userCallLast" value="{{userCallLast}}" />
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <button type="submit">수정하기</button>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div class="inner"></div>
+            </div>
         </div>
     </body>
 </html>
