@@ -37,35 +37,46 @@ a {
     justify-content: center;
 }
 
-#visual > .inner > h1 {
-    font-size: 40px;
-    padding: 60px 0 40px 0;
+#visual > .inner > #visualWrap {
+    margin-top: 120px;
+    border-radius: 7px;
+    border: 1px solid #b1b2ff;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+#visual > .inner > #visualWrap > #visualHead {
+    background-color: #b1b2ff;
+    color: white;
+    padding: 17px 0 11px 0;
+    height: 100px;
+}
+
+#visual > .inner > #visualWrap > #visualHead > h1 {
+    font-size: 50px;
     text-align: center;
 }
 
-#visual > .inner > #visual_space {
+#visual > .inner > #visualWrap > #visualSpace {
     display: flex;
     width: 100%;
     height: 450px;
     justify-content: center;
-    border-radius: 7px;
-    border: 1px solid #b1b2ff;
-    overflow: hidden;
 }
 
-#visual > .inner > #visual_space > #login_img {
+#visual > .inner > #visualWrap > #visualSpace > #loginImg {
     width: 400px;
     height: 100%;
-    background-color: white;
+    background-color: #fff;
 }
 
-#visual > .inner > #visual_space > #login_box {
+#visual > .inner > #visualWrap > #visualSpace > #loginBox {
     width: 780px;
     height: 100%;
     padding: 20px;
 }
 
-#visual > .inner > #visual_space > #login_box > #login_input {
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,22 +85,22 @@ a {
     height: 400px;
 }
 
-#visual > .inner > #visual_space > #login_box > #login_input > h3 {
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > h3 {
     font-size: 34px;
     margin-bottom: 20px;
 }
 
-#visual > .inner > #visual_space > #login_box > #login_input > form > ul > li {
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > form > ul > li {
     width: 580px;
     height: 50px;
     margin: 14px 0;
-    background: white;
+    background: #eef1ff;
     border-radius: 7px;
     border: 1px solid #b1b2ff;
     overflow: hidden;
 }
 
-#visual > .inner > #visual_space > #login_box > #login_input > form > ul > li > span {
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > form > ul > li > span {
     display: inline-block;
     width: 50px;
     height: 50px;
@@ -97,17 +108,20 @@ a {
     text-align: center;
     font-weight: 500;
     line-height: 44px;
-    border-right: 1px solid #b1b2ff;
-    background: #b1b2ff;
+    border-right: 1px solid #fff;
+    background: #fff;
 }
 
-#visual > .inner > #visual_space > #login_box > #login_input > form > ul > li > input {
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > form > ul > li > input {
     border: none;
-    height: 40px;
-    width: 520px;
+    height: 30px;
+    width: 510px;
+    margin: 5px;
+    font-size: 20px;
+    background-color: #eef1ff;
 }
 
-#visual > .inner > #visual_space > #login_box > #login_input > form > ul > li > button {
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > form > ul > li > button {
     width: 100%;
     height: 100%;
     border: none;
@@ -118,7 +132,7 @@ a {
     color: white;
 }
 
-#visual > .inner > #visual_space > #login_box > #login_input > form > ul > li > a > button {
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > form > ul > li > a > button {
     width: 100%;
     height: 100%;
     background-color: #9a62e6;

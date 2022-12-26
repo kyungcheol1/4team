@@ -20,24 +20,28 @@
             </div>
             <div id="visual">
                 <div class="inner">
-                    <h1>로그인</h1>
-                    <div id="visual_space">
-                        <div id="login_img">
-                            <img src="/projectTeam4/public/img/Logo.png" alt="" />
+                    <div id="visualWrap">
+                        <div id="visualHead">
+                            <h1>로그인</h1>
                         </div>
-                        <div id="login_box">
-                            <div id="login_input">
-                                <h3>로그인</h3>
-                                <form method="post" action="/user/login">
-                                    <ul>
-                                        <li><span>ID</span><input type="text" name="user_id" /></li>
-                                        <li><span>PW</span><input type="password" name="user_pw" /></li>
-                                        <li><button type="submit">로그인</button></li>
-                                        <li>
-                                            <a href="/user/join"><button>회원가입</button></a>
-                                        </li>
-                                    </ul>
-                                </form>
+                        <div id="visualSpace">
+                            <div id="loginImg">
+                                <img src="/projectTeam4/public/img/Logo.png" alt="" />
+                            </div>
+                            <div id="loginBox">
+                                <div id="loginInput">
+                                    <h3>로그인</h3>
+                                    <form method="post" action="/user/login">
+                                        <ul>
+                                            <li><span>ID</span><input type="text" name="userId" /></li>
+                                            <li><span>PW</span><input type="password" name="userPw" /></li>
+                                            <li><button type="submit">로그인</button></li>
+                                            <li>
+                                                <a href="/user/join"><button>회원가입</button></a>
+                                            </li>
+                                        </ul>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
