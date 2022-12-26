@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="../../public/css/board/list.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <div id="wrap">
+            <!-- 헤더 -->
+            <div id="header">
+                <div class="inner">
+                    <h1 id="logo">
+                        <img src="../../public/img/Logo.png" />
+                    </h1>
+                    <div id="menu">
+                        <ul>
+                            <li><a href="#">게시판</a></li>
+                        </ul>
+                    </div>
+                    <div id="user">
+                        <ul>
+                            <li><a href="#">회원정보</a></li>
+                            <li><a href="#">로그아웃</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 컨텐츠 -->
+            <div id="contents">
+                <div class="inner">
+                    <!-- 게시판 리스트 -->
+                    <h1>게시판</h1>
+                    <table id="boardContent">
+                        <tbody>
+                            <tr id="top">
+                                <th class="index">번호</th>
+                                <th class="title">제목</th>
+                                <th>작성자</th>
+                                <th>등록일</th>
+                                <th>조회수</th>
+                            </tr>
+                            <tr id="subject">
+                                <td>1</td>
+                                <td class="title">
+                                    <a href="#">1번제목</a>
+                                </td>
+                                <td>작성자1</td>
+                                <td>22.12.25</td>
+                                <td>5</td>
+                            </tr>
+                            <tr id="subject">
+                                <td>2</td>
+                                <td class="title">2번 제목입니다</td>
+                                <td>작성자2</td>
+                                <td>22.12.25</td>
+                                <td>1</td>
+                            </tr>
+                            <tr id="subject">
+                                <td>3</td>
+                                <td class="title">3번 제목입니다</td>
+                                <td>작성자3</td>
+                                <td>22.12.25</td>
+                                <td>0</td>
+                            </tr>
+                            <tr id="subject">
+                                <td>4</td>
+                                <td class="title">4번 제목입니다</td>
+                                <td>작성자4</td>
+                                <td>22.12.25</td>
+                                <td>12</td>
+                            </tr>
+                            <tr id="subject">
+                                <td>5</td>
+                                <td class="title">5번 제목입니다</td>
+                                <td>작성자5</td>
+                                <td>22.12.25</td>
+                                <td>245</td>
+                            </tr>
+                            <tr id="subject">
+                                <td>6</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr id="subject">
+                                <td>7</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr id="subject">
+                                <td>8</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr id="subject">
+                                <td>9</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr id="subject">
+                                <td>10</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- 게시판 리스트 끝 -->
+
+                    <!-- 버튼 -->
+                    <div id="button">
+                        <button id="btn" onclick="location.href='./write.html'">글쓰기</a>
+                        </button>
+                    </div>
+                    <!-- 버튼 끝 -->
+
+                    <!-- 페이징 -->
+                    <div id="paging">
+                        <ul>
+                            <li><a href="#">◀</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">▶</a></li>
+                        </ul>
+                    </div>
+                    <!-- 페이징 끝 -->
+                </div>
+            </div>
+
+            <!-- 풋터 -->
+            <div id="footer">
+                <div class="inner"></div>
+            </div>
+        </div>
+    </body>
+</html>
