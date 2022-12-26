@@ -1,6 +1,8 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans KR";
 }
 
 ul,
@@ -16,5 +18,114 @@ a {
     width: 100%;
     height: 2000px;
     background-color: #eef1ff;
+}
+
+#header {
+    width: 100%;
+    height: 80px;
+    background-color: #b1b2ff;
+}
+
+.inner {
+    width: 1180px;
+    margin: 0 auto;
+}
+
+#header > .inner > #head {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#visual > .inner > h1 {
+    font-size: 40px;
+    padding: 60px 0 40px 0;
+    text-align: center;
+}
+
+#visual > .inner > #visual_space {
+    display: flex;
+    width: 100%;
+    height: 450px;
+    justify-content: center;
+    border-radius: 7px;
+    border: 1px solid #b1b2ff;
+    overflow: hidden;
+}
+
+#visual > .inner > #visual_space > #login_img {
+    width: 400px;
+    height: 100%;
+    background-color: white;
+}
+
+#visual > .inner > #visual_space > #login_box {
+    width: 780px;
+    height: 100%;
+    padding: 20px;
+}
+
+#visual > .inner > #visual_space > #login_box > #login_input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    width: 700px;
+    height: 400px;
+}
+
+#visual > .inner > #visual_space > #login_box > #login_input > h3 {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+#visual > .inner > #visual_space > #login_box > #login_input > form > ul > li {
+    width: 580px;
+    height: 50px;
+    margin: 14px 0;
+    background: white;
+    border-radius: 7px;
+    border: 1px solid #b1b2ff;
+    overflow: hidden;
+}
+
+#visual > .inner > #visual_space > #login_box > #login_input > form > ul > li > span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 500;
+    line-height: 44px;
+    border-right: 1px solid #b1b2ff;
+    background: #b1b2ff;
+}
+
+#visual > .inner > #visual_space > #login_box > #login_input > form > ul > li > input {
+    border: none;
+    height: 40px;
+    width: 520px;
+}
+
+#visual > .inner > #visual_space > #login_box > #login_input > form > ul > li > button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #b1b2ff;
+    color: white;
+}
+
+#visual > .inner > #visual_space > #login_box > #login_input > form > ul > li > a > button {
+    width: 100%;
+    height: 100%;
+    background-color: #9a62e6;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    color: white;
 }
 
