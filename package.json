@@ -1,0 +1,25 @@
+{
+  "name": "projectteam4",
+  "version": "1.0.0",
+  "description": "4team 고정사항",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyungcheol1/4team.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyungcheol1/4team/issues"
+  },
+  "homepage": "https://github.com/kyungcheol1/4team#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^2.3.3",
+    "nunjucks": "^3.2.3"
+  }
+}
