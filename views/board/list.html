@@ -22,13 +22,13 @@
                     </h1>
                     <div id="menu">
                         <ul>
-                            <li><a href="#">게시판</a></li>
+                            <li><a href="/board/list">게시판</a></li>
                         </ul>
                     </div>
                     <div id="user">
                         <ul>
-                            <li><a href="#">회원정보</a></li>
-                            <li><a href="#">로그아웃</a></li>
+                            <li><a href="/user/profile">회원정보</a></li>
+                            <li><a href="/user/logout">로그아웃</a></li>
                         </ul>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                             <tr id="subject">
                                 <td>{{item.idx}}</td>
                                 <td class="title">
-                                    <a href="/board/list?index=0">{{item.subject}}</a>
+                                    <a href="/board/list?index={{item.idx}}">{{item.subject}}</a>
                                 </td>
                                 <td>{{item.writer}}</td>
                                 <td>{{item.registerDate}}</td>

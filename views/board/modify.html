@@ -10,10 +10,7 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
-            rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
     </head>
     <body>
         <div id="wrap">
@@ -25,13 +22,13 @@
                     </h1>
                     <div id="menu">
                         <ul>
-                            <li><a href="#">게시판</a></li>
+                            <li><a href="/board/list">게시판</a></li>
                         </ul>
                     </div>
                     <div id="user">
                         <ul>
-                            <li><a href="#">회원정보</a></li>
-                            <li><a href="#">로그아웃</a></li>
+                            <li><a href="/user/profile">회원정보</a></li>
+                            <li><a href="/user/logout">로그아웃</a></li>
                         </ul>
                     </div>
                 </div>
@@ -44,35 +41,19 @@
                     <div id="boardContent">
                         <div id="top"><h4>글쓰기</h4></div>
                         <div id="writeContent">
-                            <form method="post" action="/write">
+                            <form method="post" action="/board/write">
                                 <ul>
                                     <li>
-                                        <input
-                                            type="text"
-                                            name="title"
-                                            vlaue="{{items.title}}"
-                                            required
-                                        />
+                                        <input type="text" name="title" vlaue="{{items.title}}" required />
                                     </li>
                                     <li>
                                         <br />
-                                        <textarea
-                                            name="content"
-                                            vlaue="{{items.content}}"
-                                            required
-                                        ></textarea>
+                                        <textarea name="content" vlaue="{{items.content}}" required></textarea>
                                     </li>
                                 </ul>
-                                <button id="submitBtn" type="submit">
-                                    등록
-                                </button>
+                                <button id="submitBtn" type="submit">등록</button>
                             </form>
-                            <button
-                                id="cancelBtn"
-                                onclick="location.href='/board/list'"
-                            >
-                                취소
-                            </button>
+                            <button id="cancelBtn" onclick="location.href='/board/list'">취소</button>
                         </div>
                     </div>
                 </div>
@@ -80,3 +61,4 @@
         </div>
     </body>
 </html>
+

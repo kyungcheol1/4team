@@ -34,9 +34,8 @@ exports.postlogin = async ({ userId, userPw }) => {
 
 const postlogin = async ({ userId, userPw }) => {
     const where = { userId, userPw };
-    console.log(where);
-    // const result = await repo.login(where);
-    // return result;
+    const result = await repo.login(where);
+    return result;
 };
 
 postlogin(test);
