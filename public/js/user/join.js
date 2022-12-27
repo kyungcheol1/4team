@@ -6,6 +6,7 @@ const pwvalue = document.querySelector("#userPw");
 const namevalue = document.querySelector("#userName");
 const pwRpw = document.querySelector("#userRpw");
 const nickvalue = document.querySelector("#userNickname");
+const liAll = document.querySelectorAll("");
 
 const idspan = document.querySelector(".userId > span");
 const pwspan = document.querySelector(".userPw > span");
@@ -15,29 +16,31 @@ const namespan = document.querySelector(".userName > span");
 
 const creatspan = () => {
     if (idvalue.value === "") {
-        idspan.innerHTML = "값이 없습니다.";
+        idspan.innerHTML = "**아이디를 입력해주세요";
     } else {
         idspan.innerHTML = "";
     }
     if (pwvalue.value === "") {
-        pwspan.innerHTML = "값이 없습니다.";
+        pwspan.innerHTML = "**비밀번호 입력해주세요";
     } else {
         pwspan.innerHTML = "";
     }
+    if (pwRpw.value === "") {
+        rpwspan.innerHTML = "**비밀번호 확인해주세요";
+    } else if (pwvalue.value !== pwRpw.value) {
+        rpwspan.innerHTML = "**비밀번호가 다릅니다";
+    } else {
+        rpwspan.innerHTML = "";
+    }
     if (namevalue.value === "") {
-        namespan.innerHTML = "값이 없습니다.";
+        namespan.innerHTML = "**이름 입력해주세요";
     } else {
         namespan.innerHTML = "";
     }
     if (nickvalue.value === "") {
-        nickspan.innerHTML = "값이 없습니다.";
+        nickspan.innerHTML = "**닉네임을 입력해주세요";
     } else {
         nickspan.innerHTML = "";
-    }
-    if (pwRpw.value === "") {
-        rpwspan.innerHTML = "값이 없습니다.";
-    } else {
-        rpwspan.innerHTML = "";
     }
 };
 

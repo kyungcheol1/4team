@@ -1,3 +1,5 @@
+const service = require("../services/user.service");
+
 exports.getlist = (req, res) => {
     res.render("board/list");
 };
