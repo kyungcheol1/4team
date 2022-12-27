@@ -23,20 +23,18 @@ exports.postjoin = async (user) => {
     return nick;
 };
 
-const test = { userId: "qwe", userPw: "qwe" };
-
 exports.postlogin = async ({ userId, userPw }) => {
     const where = { userId, userPw };
-    console.log(where);
-    const result = await repo.finduser(where);
-    return result;
-};
-
-const postlogin = async ({ userId, userPw }) => {
-    const where = { userId, userPw };
     const result = await repo.login(where);
+    console.log(result);
     return result;
 };
 
-postlogin(test);
+// const postlogin = async ({ userId, userPw }) => {
+//     const where = { userId, userPw };
+//     const result = await repo.login(where);
+//     return result;
+// };
+
+// postlogin(test);
 

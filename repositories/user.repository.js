@@ -9,8 +9,9 @@ exports.create = async (user) => {
     return nick;
 };
 
-exports.login = async ({ user_id, user_pw }) => {
-    const result = await pool.query(`SELECT * FROM user WHERE id="${user_id}" and pw="${user_pw}";`);
+exports.login = async (where) => {
+    const { userId, userPw } = where;
+    const [[result]] = await pool.query(`SELECT * FROM user WHERE id="${userId}" and pw="${userPw}";`);
     return result;
 };
 
