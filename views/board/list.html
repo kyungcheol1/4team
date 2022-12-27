@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
-        <link href="../../public/css/board/header.css" rel="stylesheet" />
-        <link href="../../public/css/board/list.css" rel="stylesheet" />
+        <link href="/css/board/header.css" rel="stylesheet" />
+        <link href="/css/board/list.css" rel="stylesheet" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +21,7 @@
             <div id="header">
                 <div class="inner">
                     <h1 id="logo">
-                        <img src="../../public/img/Logo.png" />
+                        <img src="/img/Logo.png" />
                     </h1>
                     <div id="menu">
                         <ul>
@@ -55,7 +55,7 @@
                             <tr id="subject">
                                 <td>{{item.idx}}</td>
                                 <td class="title">
-                                    <a href="/list?index=0">{{item.subject}}</a>
+                                    <a href="/board/list?index=0">{{item.subject}}</a>
                                 </td>
                                 <td>{{item.writer}}</td>
                                 <td>{{item.registerDate}}</td>
@@ -74,7 +74,7 @@
 
                     <!-- 버튼 -->
                     <div id="button">
-                        <button id="btn" onclick="location.href='./write.html'">글쓰기</a>
+                        <button id="btn" onclick="location.href='/board/write.html'">글쓰기</a>
                         </button>
                     </div>
                     <!-- 버튼 끝 -->
