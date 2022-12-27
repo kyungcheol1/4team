@@ -11,14 +11,14 @@ exports.create = async (user) => {
 
 exports.login = async ({ user_id, user_pw }) => {
     const result = await pool.query(`SELECT * FROM user WHERE id="${user_id}" and pw="${user_pw}";`);
-    await pool.query(`SELECT * FROM user WHERE`);
+    return result;
 };
 
-const where = { userId: "qwe", userPw: "qwe" };
-const login = async ({ user_id, user_pw }) => {
-    const result = await pool.query(`SELECT * FROM user WHERE id="${user_id}" and pw="${user_pw}";`);
-    await pool.query(`SELECT * FROM user WHERE`);
-};
+// const where = { userId: "qwe", userPw: "qwe" };
+// const login = async ({ user_id, user_pw }) => {
+//     const result = await pool.query(`SELECT * FROM user WHERE id="${user_id}" and pw="${user_pw}";`);
+//     await pool.query(`SELECT * FROM user WHERE`);
+// };
 
 // const create = async () => {
 //     const user = {
