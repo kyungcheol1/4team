@@ -1,47 +1,111 @@
-const init = () => {
-  let count = 0;
-  let intevalId = 0;
-  img1 = document.querySelector("#slide_img1");
-  img2 = document.querySelector("#slide_img2");
+let count = 1;
+let intevalId = 0;
+let translate = 0;
+const transTime = 500;
 
-  const displayImg1 = async () => {
-    await setTimeout(() => {
-      img2.style = "left: -100%; opacity: 0";
-    }, 0);
-    await setTimeout(() => {
-      img1.style = "left: 0%; opacity: 1";
-    }),
-      0;
-    await setTimeout(() => {
-      img2.style = "left: 100%; opacity: 0";
-    }, 0);
-  };
+const slide = document.querySelector("#slide_box");
+const slideImgs = document.querySelectorAll("#slide_box > div");
+const circle = document.querySelectorAll(".circle");
 
-  const displayImg2 = async () => {
-    await setTimeout(() => {
-      img1.style = "left: -100%; opacity: 0";
-    }, 0);
-    await setTimeout(() => {
-      img2.style = "left:0%; opacity: 1";
-    }, 0);
-    await setTimeout(() => {
-      img1.style = "left: 100%; opacity: 0";
-    }, 0);
-  };
+const cloneFirstImg = slideImgs[0].cloneNode(true);
+const cloneLastImg = slideImgs[slideImgs.length - 1].cloneNode(true);
+slide.insertBefore(cloneLastImg, slideImgs[0]);
+slide.appendChild(cloneFirstImg);
 
-  const slide = async () => {
-    if (count === 1) {
-      console.log(1);
-      await displayImg2();
-      count = 0;
-    } else {
-      console.log(2);
-      await displayImg1();
-      count++;
-    }
-  };
+const slideCloneImgs = document.querySelectorAll("#slide_box > div");
+const imgWidth = 1180;
+const slideMaxWidth = imgWidth * slideCloneImgs.length;
+slide.style.width = `${slideMaxWidth}px`;
+translate = -imgWidth;
+slide.style.transform = `translateX(${translate}px)`;
 
-  setInterval(slide, 5000);
+const moveSlide = (c) => {
+  if (count === 1) {
+    circle[0].classList.remove("active");
+    circle[1].classList.add("active");
+  }
+  if (count === 2) {
+    circle[1].classList.remove("active");
+    circle[0].classList.add("active");
+  }
+  count += -1 * c;
+  translate += imgWidth * c;
+  slide.style.transform = `translateX(${translate}px)`;
+  slide.style.transition = `all ${transTime}ms esae`;
 };
 
-document.addEventListener("DOMContentLoaded", init);
+const sliding = () => {
+  moveSlide(-1);
+  if (count === slideCloneImgs.length - 1) {
+    setTimeout(() => {
+      slide.style.transition = "none";
+      count = 1;
+      translate = -imgWidth;
+      slide.style.transform = `translateX(${translate}px)`;
+    }, transTime);
+  }
+};
+
+circle[0].classList.add("active");
+intevalId = setInterval(sliding, 3000);
+
+const startStopBtn = document.querySelector("#start_stop_btn");
+
+const startStopBtnHandler = (e) => {
+  startStopBtn.classList.toggle("stop");
+  if (startStopBtn.classList.contains("stop")) {
+    clearInterval(intevalId);
+  }
+  if (!startStopBtn.classList.contains("stop")) {
+    intevalId = setInterval(sliding, 3000);
+  }
+};
+
+startStopBtn.addEventListener("click", startStopBtnHandler);
+
+const preBtn = document.querySelector("#slide_left_btn");
+const nextBtn = document.querySelector("#slide_right_btn");
+
+let running = false;
+
+const preBtnHandler = (e) => {
+  if (running === true) return;
+  startStopBtn.classList.add("stop");
+  clearInterval(intevalId);
+  console.log(count);
+  moveSlide(-1);
+  if (count === slideCloneImgs.length - 1) {
+    setTimeout(() => {
+      slide.style.transition = "none";
+      count = 1;
+      translate = -imgWidth;
+      slide.style.transform = `translateX(${translate}px)`;
+    }, transTime);
+  }
+  running = true;
+  setTimeout(() => {
+    running = false;
+  }, 1000);
+};
+
+const nextBtnHandler = () => {
+  if (running === true) return;
+  startStopBtn.classList.add("stop");
+  clearInterval(intevalId);
+  moveSlide(1);
+  if (count === 0) {
+    setTimeout(() => {
+      slide.style.transition = "none";
+      count = slideCloneImgs.length - 2;
+      translate = -(imgWidth * count);
+      slide.style.transform = `translateX(${translate}px)`;
+    }, transTime);
+  }
+  running = true;
+  setTimeout(() => {
+    running = false;
+  }, 1000);
+};
+
+preBtn.addEventListener("click", preBtnHandler);
+nextBtn.addEventListener("click", nextBtnHandler);
