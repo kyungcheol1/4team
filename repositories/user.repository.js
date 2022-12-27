@@ -5,6 +5,19 @@ exports.create = async (user) => {
     const userdb = "id, pw, name, nickName, birth, gender, phone, tel";
     const item = [id, pw, name, nickName, birth, gender, phone, tel].map((v) => `"${v}"`).join(", ");
     await pool.query(`INSERT INTO user(${userdb}) value(${item});`);
+    const [nick] = await pool.query(`SELECT nickName FROM user WHERE nickName="${nickName}"`);
+    return nick;
+};
+
+exports.login = async ({ user_id, user_pw }) => {
+    const result = await pool.query(`SELECT * FROM user WHERE id="${user_id}" and pw="${user_pw}";`);
+    await pool.query(`SELECT * FROM user WHERE`);
+};
+
+const where = { userId: "qwe", userPw: "qwe" };
+const login = async ({ user_id, user_pw }) => {
+    const result = await pool.query(`SELECT * FROM user WHERE id="${user_id}" and pw="${user_pw}";`);
+    await pool.query(`SELECT * FROM user WHERE`);
 };
 
 // const create = async () => {
