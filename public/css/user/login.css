@@ -151,3 +151,27 @@ a {
     background-color: #8f00ff;
 }
 
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > div {
+    width: 580px;
+    height: 50px;
+    background: #eef1ff;
+    border-radius: 7px;
+    border: 1px solid #b1b2ff;
+    overflow: hidden;
+}
+
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > div > a > button {
+    width: 100%;
+    height: 100%;
+    background-color: #6163ff;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+#visual > .inner > #visualWrap > #visualSpace > #loginBox > #loginInput > div > a > button:hover {
+    background-color: #8f00ff;
+}
+
