@@ -74,6 +74,10 @@ a {
     font-size: 20px;
 }
 
+#visual > .inner > #join > #textSpace > form > ul > li > span {
+    color: red;
+}
+
 #visual > .inner > #join > #textSpace > form > ul > li > select {
     margin: 10px 0;
     width: 580px;
