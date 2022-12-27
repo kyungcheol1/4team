@@ -1,0 +1,35 @@
+{% if userCookie %}
+<div id="header">
+  <div class="inner">
+    <h1 id="logo">
+      <img src="/img/Logo.png" />
+    </h1>
+    <div id="menu">
+      <ul>
+        <li><a href="#">게시판</a></li>
+      </ul>
+    </div>
+    <div id="user">
+      <ul>
+        <li><a href="#">회원정보</a></li>
+        <li><a href="#">로그아웃</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% else %}
+<div id="header">
+  <div class="inner">
+    <div id="logo_board">
+      <div>
+        <a href="/"><img src="/img/Logo.png" alt="LOGO" /></a>
+      </div>
+      <div id="board_btn"><a href="/board/list">게시판</a></div>
+    </div>
+    <div id="login_join">
+      <a id="login_btn" href="/user/login">로그인</a>
+      <a id="join_btn" href="/user/join">회원가입</a>
+    </div>
+  </div>
+</div>
+{% endif %}
