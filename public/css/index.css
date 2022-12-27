@@ -161,9 +161,20 @@ a {
 }
 
 #content_box {
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.member_task {
+  content: "";
+  position: absolute;
+  width: 780px;
+  height: 380px;
+  background-color: red;
+  border-radius: 10px;
+  right: 0px;
 }
 
 #member_box {
@@ -186,6 +197,7 @@ a {
 .member {
   padding: 26px 20px;
   height: 95px;
+  cursor: pointer;
 }
 
 .member:not(:last-child) {
@@ -296,4 +308,21 @@ a {
 
 #footer_contents_box > div:not(:last-child) {
   margin-bottom: 10px;
+}
+
+.skill_init {
+  transition-timing-function: ease;
+  transition-duration: 0.4s;
+  opacity: 0;
+  transition-property: opacity, transform;
+  transform: translate3d(0, 100px, 0);
+}
+
+.skill_animate {
+  transition-delay: 50ms;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition-timing-function: ease;
+  transition-duration: 0.4s;
+  transition-property: opacity, transform;
 }
