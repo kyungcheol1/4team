@@ -10,7 +10,10 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <div id="wrap">
@@ -44,16 +47,32 @@
                             <form method="post" action="/write">
                                 <ul>
                                     <li>
-                                        <input type="text" name="title" vlaue="{{items.title}}" />
+                                        <input
+                                            type="text"
+                                            name="title"
+                                            vlaue="{{items.title}}"
+                                            required
+                                        />
                                     </li>
                                     <li>
                                         <br />
-                                        <textarea name="content" vlaue="{{items.content}}"></textarea>
+                                        <textarea
+                                            name="content"
+                                            vlaue="{{items.content}}"
+                                            required
+                                        ></textarea>
                                     </li>
                                 </ul>
-                                <button id="cancelBtn" type="submit">취소</button>
-                                <button id="submitBtn" type="submit">등록</button>
+                                <button id="submitBtn" type="submit">
+                                    등록
+                                </button>
                             </form>
+                            <button
+                                id="cancelBtn"
+                                onclick="location.href='/board/list'"
+                            >
+                                취소
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -61,4 +80,3 @@
         </div>
     </body>
 </html>
-
