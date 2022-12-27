@@ -8,9 +8,12 @@ exports.getlogin = (req, res) => {
     res.render("user/login");
 };
 
-exports.postlogin = async (req, res) => {
+exports.postlogin = async (req, res, next) => {
     const { userId, userPw } = req.body;
-    const nickName = await service.postlogin({ userId, userPw });
+    const info = await service.postlogin({ userId, userPw });
+    if (info === undefined) return res.send("<script>alert('아이디나 비밀번호가 일치하지 않습니다');history.back()</script>");
+
+    res.setHeader("Set-cookie", `usernick=${info.nickName}; Path=/;`);
     res.redirect("/");
 };
 
