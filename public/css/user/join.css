@@ -70,7 +70,7 @@ a {
     height: 50px;
     border-radius: 7px;
     border: none;
-    padding: 0 0 0 20px;
+    padding: 0 20px;
     font-size: 20px;
 }
 
@@ -84,7 +84,7 @@ a {
     height: 50px;
     border-radius: 7px;
     border: none;
-    padding: 0 0 0 20px;
+    padding: 0 20px;
     font-size: 20px;
     appearance: none;
     background: url("/projectTeam4/public/img/Polygon3.svg") no-repeat 95% 50%;
@@ -129,7 +129,7 @@ a {
     height: 50px;
     border-radius: 7px;
     border: none;
-    padding: 0 0 0 20px;
+    padding: 0 20px;
     font-size: 20px;
 }
 
@@ -157,7 +157,7 @@ a {
     height: 50px;
     border-radius: 7px;
     border: none;
-    padding: 0 0 0 20px;
+    padding: 0 20px;
     font-size: 20px;
 }
 
