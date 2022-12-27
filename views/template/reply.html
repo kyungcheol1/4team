@@ -1,0 +1,29 @@
+<!-- 기본 -->
+<div id="reply">
+  <span><img src="/img/Vector.png" /> 댓글 0개</span><br />
+  <br />
+  관리자
+  <br />
+  <input type="text" name="reply" placeholder="댓글 입력하기" />
+</div>
+<!-- 댓글이 존재할때 -->
+<div id="reply_list">
+  <span><img src="/img/Vector.png" /> 댓글 {{replyList | length}}개</span><br />
+  <br />
+  {{for i in replyList}}
+  <span>{{cookie.id}}</span> <span>{{replyList.registerDate}} </span><span><a href="#">수정</a></span>
+  <span><a href="#">삭제</a></span>
+  <br />
+  <input type="text" name="reply" value="{{replyList[i].content}}" readonly />
+  {{% endfor %}}
+</div>
+<!-- 댓글 수정시 -->
+<div id="reply_modify">
+  <span><img src="/img/Vector.png" /> 댓글 {{replyList | length}}개</span><br />
+  <br />
+  {{for i in replyList}}
+  <span>{{cookie.id}}</span> <span>{{replyList.registerDate}} </span><span><a href="#">삭제</a></span>
+  <br />
+  <input type="text" name="reply" value="{{replyList[i].content}}" />
+  {{% endfor %}}
+</div>

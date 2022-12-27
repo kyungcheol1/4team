@@ -1,18 +1,19 @@
 const pool = require("./db");
 
 exports.create = async (user) => {
-    const { id, pw, name, nickName, birth, gender, phone, tel } = user;
-    const userdb = "id, pw, name, nickName, birth, gender, phone, tel";
-    const item = [id, pw, name, nickName, birth, gender, phone, tel].map((v) => `"${v}"`).join(", ");
-    await pool.query(`INSERT INTO user(${userdb}) value(${item});`);
-    const [nick] = await pool.query(`SELECT nickName FROM user WHERE nickName="${nickName}"`);
-    return nick;
+  const { id, pw, name, nickName, birth, gender, phone, tel } = user;
+  const userdb = "id, pw, userName, nickName, birth, gender, phone, tel";
+  const item = [id, pw, name, nickName, birth, gender, phone, tel].map((v) => `"${v}"`).join(", ");
+  await pool.query(`INSERT INTO user(${userdb}) value(${item});`);
+  const [nick] = await pool.query(`SELECT nickName FROM user WHERE nickName="${nickName}"`);
+  return nick;
 };
 
 exports.login = async (where) => {
-    const { userId, userPw } = where;
-    const [[result]] = await pool.query(`SELECT * FROM user WHERE id="${userId}" and pw="${userPw}";`);
-    return result;
+  const { userId, userPw } = where;
+  const [[result]] = await pool.query(`SELECT * FROM user WHERE id="${userId}" and pw="${userPw}";`);
+  //   console.log(result);
+  return result;
 };
 
 // const where = { userId: "qwe", userPw: "qwe" };
@@ -46,4 +47,3 @@ exports.login = async (where) => {
 // };
 
 // create();
-

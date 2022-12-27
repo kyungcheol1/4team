@@ -91,6 +91,20 @@ a {
   transition: all 0.5s ease;
 }
 
+#login_join > #profile {
+  display: inline-block;
+  margin: 9px 20px 9px;
+  color: #fff;
+  font-weight: bold;
+}
+
+#login_join > #logout {
+  display: inline-block;
+  margin: 9px 20px 9px;
+  color: #fff;
+  font-weight: bold;
+}
+
 #slide {
   margin-top: 80px;
 }
