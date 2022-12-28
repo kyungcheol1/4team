@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/admin/board_list.css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header">
+        <div class="inner">
+          <div id="logo_board">
+            <div>
+              <a href="/"><img src="/img/Logo.png" alt="LOGO" /></a>
+            </div>
+            <div id="board_btn"><a href="/board/list">게시판</a></div>
+          </div>
+          <div id="login_join">
+            <a id="profile" href="/admin/userEdit">회원정보</a>
+            <a id="logout" href="/">로그아웃</a>
+          </div>
+        </div>
+      </div>
+      <div id="control_btns">
+        <div class="inner">
+          <div id="user_modify"><a href="/admin/userList">회원관리</a></div>
+          <div id="board_modify">게시글관리</div>
+        </div>
+      </div>
+      <div id="board_wrap">
+        <div class="inner">
+          <ul id="board_header">
+            <li class="board_id">번호</li>
+            <li class="board_title">제목</li>
+            <li class="board_nickName">작성자</li>
+            <li class="board_registerDate">등록일</li>
+            <li class="board_views">조회수</li>
+            <li class="board_delete">삭제</li>
+          </ul>
+        </div>
+        <div id="content_wrap">
+          <div class="inner">
+            <ul class="board_contents">
+              <li class="board_id">0</li>
+              <li class="board_title">테스트 제목</li>
+              <li class="board_nickName">관리자</li>
+              <li class="board_registerDate">22-02-01</li>
+              <li class="board_views">0</li>
+              <li class="board_delete">
+                <a href="/admin/userList/?idx=0"><img src="/img/delete_btn.svg" alt="modify_btn" /></a>
+              </li>
+            </ul>
+            <ul class="board_contents">
+              <li class="board_id">0</li>
+              <li class="board_title">테스트 제목</li>
+              <li class="board_nickName">관리자</li>
+              <li class="board_registerDate">22-02-01</li>
+              <li class="board_views">0</li>
+              <li class="board_delete">
+                <a href="/admin/userList/?idx=1"><img src="/img/delete_btn.svg" alt="modify_btn" /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="page_btn_wrap">
+          <div class="inner">
+            <div id="button_wrap">
+              <div id="pre_btn"><img src="/img/slide_left.svg" alt="pre" /></div>
+              <div class="page_btn"><a href="/admin/boardList/?page=0">1</a></div>
+              <div class="page_btn"><a href="/admin/boardList/?page=1">2</a></div>
+              <div id="next_btn"><img src="/img/slide_right.svg" alt="next" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
