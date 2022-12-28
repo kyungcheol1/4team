@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/admin/user_list.css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header">
+        <div class="inner">
+          <div id="logo_board">
+            <div>
+              <a href="/"><img src="/img/Logo.png" alt="LOGO" /></a>
+            </div>
+            <div id="board_btn"><a href="/board/list">게시판</a></div>
+          </div>
+          <div id="login_join">
+            <a id="profile" href="/admin/userEdit">회원정보</a>
+            <a id="logout" href="/">로그아웃</a>
+          </div>
+        </div>
+      </div>
+      <div id="control_btns">
+        <div class="inner">
+          <div id="user_modify">회원관리</div>
+          <div id="board_modify"><a href="/admin/boardList">게시글관리</a></div>
+        </div>
+      </div>
+      <div id="board_wrap">
+        <div class="inner">
+          <ul id="board_header">
+            <li class="board_id">아이디</li>
+            <li class="board_userName">이름</li>
+            <li class="board_nickName">닉네임</li>
+            <li class="board_birth">생년월일</li>
+            <li class="board_gender">성별</li>
+            <li class="board_phone">휴대전화</li>
+            <li class="board_tel">일반전화</li>
+            <li class="board_userLevel">등급</li>
+            <li class="board_isUse">계정상태</li>
+            <li class="board_user_modify">수정</li>
+          </ul>
+        </div>
+        <div id="content_wrap">
+          <div class="inner">
+            {% for item in result %}
+            <ul class="board_contents">
+              <li class="board_id">{{item.id}}</li>
+              <li class="board_userName">{{item.userName}}</li>
+              <li class="board_nickName">{{item.nickName}}</li>
+              <li class="board_birth">{{item.birth}}</li>
+              <li class="board_gender">{{item.gender}}</li>
+              <li class="board_phone">{{item.phone}}</li>
+              <li class="board_tel">{{item.tel}}</li>
+              <li class="board_userLevel">{{item.userLevel}}</li>
+              <li class="board_isUse">{{item.isUse}}</li>
+              <li class="board_user_modify">
+                <a href="/admin/userEdit/?id={{item.id}}"><img src="/img/modify_btn.svg" alt="modify_btn" /></a>
+              </li>
+            </ul>
+            {% endfor %}
+          </div>
+        </div>
+        <div id="page_btn_wrap">
+          <div class="inner">
+            <div id="button_wrap">
+              <div id="pre_btn"><img src="/img/slide_left.svg" alt="pre" /></div>
+              <div class="page_btn"><a href="/admin/userList/?page=0">1</a></div>
+              <div class="page_btn"><a href="/admin/userList/?page=1">2</a></div>
+              <div id="next_btn"><img src="/img/slide_right.svg" alt="next" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
