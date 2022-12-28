@@ -41,14 +41,13 @@
                     <div id="boardContent">
                         <div id="top"><h4>글쓰기</h4></div>
                         <div id="writeContent">
-                            <form method="post" action="/board/write">
+                            <form method="post" action="/board/modify">
+                                <input type="hidden" name="idx" value="{{list.idx}}" />
                                 <ul>
-                                    <li>
-                                        <input type="text" name="title" vlaue="{{items.title}}" required />
-                                    </li>
+                                    <li><input type="text" name="title" value="{{list.title}}" required /></li>
                                     <li>
                                         <br />
-                                        <textarea name="content" vlaue="{{items.content}}" required></textarea>
+                                        <textarea name="content" required>{{list.content}}</textarea>
                                     </li>
                                 </ul>
                                 <button id="submitBtn" type="submit">등록</button>
@@ -61,4 +60,3 @@
         </div>
     </body>
 </html>
-

@@ -50,22 +50,15 @@
                             </tr>
                             {% for item in list %}
                             <tr id="subject">
-                                <td>{{item.idx}}</td>
+                                <td>{{loop.index}}</td>
                                 <td class="title">
-                                    <a href="/board/list?index={{item.idx}}">{{item.subject}}</a>
+                                    <a href="/board/view?index={{item.idx}}">{{item.title}}</a>
                                 </td>
                                 <td>{{item.writer}}</td>
                                 <td>{{item.registerDate}}</td>
                                 <td>{{item.hit}}</td>
                             </tr>
                             {% endfor %}
-                            <tr id="subject">
-                                <td>2</td>
-                                <td class="title">2번 제목입니다</td>
-                                <td>작성자2</td>
-                                <td>22.12.25</td>
-                                <td>1</td>
-                            </tr>
                         </tbody>
                     </table>
                     <!-- 게시판 리스트 끝 -->
@@ -93,5 +86,5 @@
             </div>
         </div>
     </body>
+    <script type="text/javascript" src="/js/board/list.js"></script>
 </html>
-
