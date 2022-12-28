@@ -4,8 +4,8 @@ const user = require("./user.route");
 const board = require("./board.route");
 
 router.get("/", (req, res) => {
-  const id = req.cookies.id;
-  res.render("index.html", { id });
+    const id = req.cookies.id;
+    res.render("index.html", { id });
 });
 
 router.use("/user", user);
@@ -13,3 +13,4 @@ router.use("/user", user);
 router.use("/board", board);
 
 module.exports = router;
+

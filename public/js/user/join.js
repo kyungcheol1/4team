@@ -1,77 +1,129 @@
-// const inputli = document.querySelectorAll("#inputBox > li");
-// const inputform = document.querySelector("#inputform");
+const inputli = document.querySelectorAll("#inputBox > li");
+const inputform = document.querySelector("#inputbtn");
+const form = document.querySelector("#inputform");
+const idcheck = document.querySelector("#checkid");
 
-// const idvalue = document.querySelector("#userId");
-// const pwvalue = document.querySelector("#userPw");
-// const namevalue = document.querySelector("#userName");
-// const pwRpwvalue = document.querySelector("#userRpw");
-// const nickvalue = document.querySelector("#userNickname");
-// const liAll = document.querySelectorAll(".inputli");
+const liAll = document.querySelectorAll(".inputli");
+const idvalue = document.querySelector("#userId");
+const pwvalue = document.querySelector("#userPw");
+const namevalue = document.querySelector("#userName");
+const pwRpwvalue = document.querySelector("#userRpw");
+const nickvalue = document.querySelector("#userNickname");
+const userBirthyy = document.querySelector("#userBirthyy");
+const userBirthmm = document.querySelector("#userBirthmm");
+const userBirthdd = document.querySelector("#userBirthdd");
+const userPhone = document.querySelector("#userPhone");
+const userPhoneMiddle = document.querySelector("#userPhoneMiddle");
+const userPhoneLast = document.querySelector("#userPhoneLast");
 
-// const idspan = document.querySelector(".userId > span");
-// const pwspan = document.querySelector(".userPw > span");
-// const pwRpwspan = document.querySelector(".userRpw > span");
-// const nickspan = document.querySelector(".userNick > span");
-// const namespan = document.querySelector(".userName > span");
+const idspan = document.querySelector(".userId > span");
+const pwspan = document.querySelector(".userPw > span");
+const pwRpwspan = document.querySelector(".userRpw > span");
+const nickspan = document.querySelector(".userNick > span");
+const namespan = document.querySelector(".userName > span");
+const userBirthspan = document.querySelector("#userBirth > span");
+const phonespan = document.querySelector(".phone > span");
 
-// const findvalue = (valchek, span) => {
-//     if (valchek.value === "") {
-//         valchek.focus();
-//         span.innerHTML = `**칸이 비어 있습니다.`;
-//     } else {
-//         span.innerHTML = "";
-//     }
-// };
+const findvalue = (val, span) => {
+    if (val.value === "") {
+        val.focus();
+        span.innerHTML = `**필수 입력 정보입니다.`;
+        return false;
+    } else {
+        span.innerHTML = "";
+        return true;
+    }
+};
 
-// const idcheck = () => {
-//     findvalue(idvalue, idspan);
-// };
+const blurEvent = (val, span) => {
+    val.addEventListener("blur", () => {
+        if (val.value === "") {
+            span.innerHTML = `**값을 입력해 주세요.`;
+            return false;
+        } else {
+            span.innerHTML = "";
+            return true;
+        }
+    });
+};
 
-// const creatspan = () => {
-//     findvalue(nickvalue, nickspan);
-//     findvalue(namevalue, namespan);
-//     findvalue(pwRpwvalue, pwRpwspan);
-//     findvalue(pwvalue, pwspan);
-//     findvalue(idvalue, idspan);
-//     // if (nickvalue.value === "") {
-//     //     nickvalue.focus();
-//     //     nickspan.innerHTML = "**닉네임을 입력해주세요";
-//     // } else {
-//     //     nickspan.innerHTML = "";
-//     // }
-//     // if (namevalue.value === "") {
-//     //     namevalue.focus();
-//     //     namespan.innerHTML = "**이름 입력해주세요";
-//     // } else {
-//     //     namespan.innerHTML = "";
-//     // }
-//     // if (pwRpwvalue.value === "") {
-//     //     pwRpwvalue.focus();
-//     //     pwRpwspan.innerHTML = "**비밀번호 확인해주세요";
-//     // } else if (pwvalue.value !== pwRpwvalue.value) {
-//     //     pwRpwvalue.focus();
-//     //     pwRpwspan.innerHTML = "**비밀번호가 다릅니다";
-//     // } else {
-//     //     rpwspan.innerHTML = "";
-//     // }
-//     // if (pwvalue.value === "") {
-//     //     pwvalue.focus();
-//     //     pwspan.innerHTML = "**비밀번호 입력해주세요";
-//     // } else {
-//     //     pwspan.innerHTML = "";
-//     // }
-//     // if (idvalue.value === "") {
-//     //     idvalue.focus();
-//     //     idspan.innerHTML = "**아이디를 입력해주세요";
-//     // } else {
-//     //     idspan.innerHTML = "";
-//     // }
-// };
+const blurcheck = () => {
+    blurEvent(userPhone, phonespan);
+    blurEvent(userPhoneMiddle, phonespan);
+    blurEvent(userPhoneLast, phonespan);
+    blurEvent(userBirthdd, userBirthspan);
+    blurEvent(userBirthmm, userBirthspan);
+    blurEvent(userBirthyy, userBirthspan);
+    blurEvent(nickvalue, nickspan);
+    blurEvent(namevalue, namespan);
+    blurEvent(pwRpwvalue, pwRpwspan);
+    blurEvent(pwvalue, pwspan);
+    blurEvent(idvalue, idspan);
+};
 
-// const formHandler = (e) => {
-//     e.preventDefault();
-//     creatspan();
-// };
+blurcheck();
 
-// inputform.addEventListener("submit", formHandler);
+const idcheckHandler = async () => {
+    let userid = idvalue.value;
+    let id = {
+        userid: userid,
+    };
+    let respone = await fetch("http://localhost:3000/user/join/idcheck", {
+        method: "POST",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(id),
+    });
+    let json = await respone.json();
+    let check = await json.check;
+
+    if (!check) {
+        idspan.innerHTML = "멘탈이 깨집니다.";
+    } else {
+        idspan.innerHTML = "생성이 가능합니다.";
+    }
+
+    // if (response.ok) {
+    //     // HTTP 상태 코드가 200~299일 경우
+    //     // 응답 몬문을 받습니다(관련 메서드는 아래에서 설명).
+    //     let json = await response.json();
+    // } else {
+    //     alert("HTTP-Error: " + response.status);
+    // }
+    // console.log(userid);
+    // let response = await fetch("http://localhost:3000/user/join/idcheck", {
+    //     method: "POST",
+    //     headers: {
+    //         "Content-Type": "application/json;charset=utf-8",
+    //     },
+    //     body: toString(userid),
+    // });
+    // const re = response.then((respon) => respon.text());
+    // console.log(re);
+
+    // const rkk = response;
+    // console.log(rkk);
+};
+
+const formHandler = (e) => {
+    e.preventDefault();
+    const a1 = findvalue(userPhone, phonespan);
+    const b1 = findvalue(userPhoneMiddle, phonespan);
+    const c1 = findvalue(userPhoneLast, phonespan);
+    const d1 = findvalue(userBirthdd, userBirthspan);
+    const e1 = findvalue(userBirthmm, userBirthspan);
+    const f1 = findvalue(userBirthyy, userBirthspan);
+    const g1 = findvalue(nickvalue, nickspan);
+    const h1 = findvalue(namevalue, namespan);
+    const i1 = findvalue(pwRpwvalue, pwRpwspan);
+    const j1 = findvalue(pwvalue, pwspan);
+    const k1 = findvalue(idvalue, idspan);
+
+    if (a1 && b1 && c1 && d1 && e1 && f1 && g1 && h1 && i1 && j1 && k1) form.submit();
+};
+
+idcheck.addEventListener("click", idcheckHandler);
+form.addEventListener("submit", formHandler);
 
