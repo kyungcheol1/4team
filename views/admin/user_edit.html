@@ -29,23 +29,25 @@
                     <p>사용자 정보</p>
                     <div id="user_modify_box">
                       <div>
+                        <input type="hidden" id="userLevelCheck" value="{{result.userLevel}}" />
                         <select name="userLevel" id="user_level">
-                          <option value="user">사용자</option>
-                          <option value="superUser">관리자</option>
+                          <option value="1">사용자</option>
+                          <option value="2">관리자</option>
                         </select>
                       </div>
                       <div>
+                        <input type="hidden" id="isUseCheck" value="{{result.isUse}}" />
                         <select name="isUse" id="is_use">
-                          <option value="active">활성화</option>
-                          <option value="deactive">비활성화</option>
+                          <option value="1">활성화</option>
+                          <option value="0">비활성화</option>
                         </select>
                       </div>
                     </div>
                   </li>
                   <li id="user_id">
                     <p>아이디</p>
-                    <input type="text" name="userId" placeholder="새로운 닉네임 입력해주세요" value="{{result.id}}" />
-                    <button>중복확인</button>
+                    <input type="text" id="userId" name="userId" placeholder="새로운 닉네임 입력해주세요" value="{{result.id}}" />
+                    <button id="checkId" type="submit">중복확인</button>
                   </li>
                   <li>
                     <p>비밀번호</p>
@@ -61,51 +63,54 @@
                   </li>
                   <li class="userNick">
                     <p>닉네임</p>
-                    <input type="text" name="userNickname" placeholder="닉네임을 입력해주세요" value="{{result.nickName}}" />
-                    <button>중복확인</button>
+                    <input type="text" id="userNickName" name="userNickname" placeholder="닉네임을 입력해주세요" value="{{result.nickName}}" />
+                    <button id="checkNickName" type="submit">중복확인</button>
                   </li>
                   <li id="userBirth">
                     <p>생년월일</p>
                     <div>
-                      <input type="text" name="userBirthyy" placeholder="년(4자)" vlaue="{{userBirthyy}}" />
-                      <select name="userBirthmm" id="" value="{{userBirthmm}}">
-                        <option value="1">1월</option>
-                        <option value="2">2월</option>
-                        <option value="3">3월</option>
-                        <option value="4">4월</option>
-                        <option value="5">5월</option>
-                        <option value="6">6월</option>
-                        <option value="7">7월</option>
-                        <option value="8">8월</option>
-                        <option value="9">9월</option>
+                      <input type="text" name="userBirthyy" placeholder="년(4자)" value="{{result.userBirthyy}}" />
+                      <input type="hidden" id="userBirthmmCheck" value="{{result.userBirthmm}}" />
+                      <select name="userBirthmm" id="userBirthmm">
+                        <option value="01">1월</option>
+                        <option value="02">2월</option>
+                        <option value="03">3월</option>
+                        <option value="04">4월</option>
+                        <option value="05">5월</option>
+                        <option value="06">6월</option>
+                        <option value="07">7월</option>
+                        <option value="08">8월</option>
+                        <option value="09">9월</option>
                         <option value="10">10월</option>
                         <option value="11">11월</option>
                         <option value="12">12월</option>
                       </select>
-                      <input type="text" name="userBirthdd" placeholder="일" value="{{userBirthdd}}" />
+                      <input type="text" name="userBirthdd" placeholder="일" value="{{result.userBirthdd}}" />
                     </div>
                   </li>
                   <li>
                     <p>성별</p>
-                    <select name="userGender" id="" value="{{userGender}}">
+                    <input type="hidden" id="userGenderCheck" value="{{result.gender}}" />
+                    <select name="userGender" id="userGender">
                       <option value="남자">남자</option>
                       <option value="여자">여자</option>
+                      <option value="여자" selected>여자</option>
                     </select>
                   </li>
                   <li class="phone">
                     <p>휴대전화</p>
                     <div>
-                      <input type="text" name="userPhone" value="{{userPhone}}" />
-                      <input type="text" name="userPhoneMiddle" value="{{userPhoneMiddle}}" />
-                      <input type="text" name="userPhoneLast" value="{{userPhoneLast}}" />
+                      <input type="text" name="userPhone" value="{{result.userPhone}}" />
+                      <input type="text" name="userPhoneMiddle" value="{{result.userPhoneMiddle}}" />
+                      <input type="text" name="userPhoneLast" value="{{result.userPhoneLast}}" />
                     </div>
                   </li>
                   <li class="phone">
                     <p>일반전화(선택)</p>
                     <div>
-                      <input type="text" name="userCall" value="{{userCall}}" />
-                      <input type="text" name="userCallMiddle" value="{{userCallMiddle}}" />
-                      <input type="text" name="userCallLast" value="{{userCallLast}}" />
+                      <input type="text" name="userCall" value="{{result.userCall}}" />
+                      <input type="text" name="userCallMiddle" value="{{result.userCallMiddle}}" />
+                      <input type="text" name="userCallLast" value="{{result.userCallLast}}" />
                     </div>
                   </li>
                   <li>
@@ -121,5 +126,7 @@
         <div class="inner"></div>
       </div>
     </div>
+    <script src="/js/admin/user_select.js"></script>
+    <script src="/js/admin/user_double_check.js"></script>
   </body>
 </html>

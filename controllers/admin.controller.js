@@ -9,13 +9,25 @@ exports.postLogin = async (req, res) => {
 };
 
 exports.getUser = async (req, res) => {
-  const result = await service.bringUser();
-
+  const cookie = req.cookies.id;
+  const result = await service.bringUser({ cookie });
+  if (result === undefined) return res.send("<script>alert('잘못된 접근입니다.');location.href=`/admin`</script>");
   res.render("admin/user_list.html", { result });
 };
 
 exports.getEditUser = async (req, res) => {
   const { id } = req.query;
-  const result = await service.getEditUser(id);
+  if (id === undefined) return res.send("<script>alert('잘못된 접근입니다.');location.href=`/admin`</script>");
+  const cookie = req.cookies.id;
+  const result = await service.getEditUser({ id, cookie });
+  if (result === undefined) return res.send("<script>alert('잘못된 접근입니다.');location.href=`/admin`</script>");
   res.render("admin/user_edit.html", { result });
+};
+
+exports.postEditUser = async (req, res) => {
+  const cookie = req.cookies.id;
+  const userData = req.body;
+  const result = await service.postEditUSer({ userData, cookie });
+  if (result === undefined) return res.send("<script>alert('잘못된 접근입니다.');location.href=`/admin`</script>");
+  res.send("test");
 };
