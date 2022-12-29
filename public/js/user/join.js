@@ -1,10 +1,8 @@
-const inputli = document.querySelectorAll("#inputBox > li");
 const inputform = document.querySelector("#inputbtn");
 const form = document.querySelector("#inputform");
 const idcheck = document.querySelector("#checkid");
 const nickcheck = document.querySelector("#nickcheckbtn");
 
-const liAll = document.querySelectorAll(".inputli");
 const idvalue = document.querySelector("#userId");
 const pwvalue = document.querySelector("#userPw");
 const namevalue = document.querySelector("#userName");
@@ -17,13 +15,15 @@ const userPhone = document.querySelector("#userPhone");
 const userPhoneMiddle = document.querySelector("#userPhoneMiddle");
 const userPhoneLast = document.querySelector("#userPhoneLast");
 
-const idspan = document.querySelector(".userId > span");
-const pwspan = document.querySelector(".userPw > span");
 const pwRpwspan = document.querySelector(".userRpw > span");
 const nickspan = document.querySelector(".userNick > span");
 const namespan = document.querySelector(".userName > span");
-const userBirthspan = document.querySelector("#userBirth > span");
-const phonespan = document.querySelector(".phone > span");
+const biryyspan = document.querySelector(".userBirthyy");
+const birmmspan = document.querySelector(".userBirthmm");
+const birddspan = document.querySelector(".userBirthdd");
+const Callspan = document.querySelector(".userCall");
+const Callmidspan = document.querySelector(".userCallMiddle");
+const Calllastspan = document.querySelector(".userCallLast");
 
 const date = new Date();
 
@@ -144,27 +144,27 @@ const birthblurEvent = () => {
     const ddreg = /^[0-9]{2,2}$/;
     userBirthyy.addEventListener("blur", () => {
         if (userBirthyy.value === "") {
-            userBirthspan.innerHTML = `**값을 입력해 주세요.`;
+            biryyspan.innerHTML = `**연도를 입력해 주세요.`;
             return false;
         } else if (!yyreg.test(userBirthyy.value)) {
-            userBirthspan.innerHTML = "**연도는 4글자숫자로 입력 가능합니다";
+            biryyspan.innerHTML = "**연도는 4글자숫자로 입력 가능합니다";
             return false;
         } else if (userBirthyy.value < 1900 || userBirthyy.value > date.getFullYear()) {
-            userBirthspan.innerHTML = "**연도를 확인해주세요";
+            biryyspan.innerHTML = "**연도를 확인해주세요";
         } else {
-            userBirthspan.innerHTML = "";
+            biryyspan.innerHTML = "";
             return true;
         }
     });
     userBirthdd.addEventListener("blur", () => {
         if (userBirthdd.value === "") {
-            userBirthspan.innerHTML = `**값을 입력해 주세요.`;
+            birddspan.innerHTML = `**날짜를 입력해 주세요.`;
             return false;
         } else if (!ddreg.test(userBirthdd.value)) {
-            userBirthspan.innerHTML = "**일자는 2글자숫자로 입력 해주세요 ex)1일 -> 01";
+            birddspan.innerHTML = "**일자는 2글자숫자로 입력 해주세요 ex)1일 -> 01";
             return false;
         } else {
-            userBirthspan.innerHTML = "";
+            birddspan.innerHTML = "";
             return true;
         }
     });
@@ -175,37 +175,37 @@ const phoneblurEvent = () => {
     const phonemidreg = /^[0-9]{3,4}$/;
     userPhone.addEventListener("blur", () => {
         if (userPhone.value === "") {
-            phonespan.innerHTML = `**값을 입력해 주세요.`;
+            Callspan.innerHTML = `**첫 값을 입력해 주세요.`;
             return false;
         } else if (!phonereg.test(userPhone.value)) {
-            phonespan.innerHTML = "**3글자숫자로 입력 가능합니다";
+            Callspan.innerHTML = "**3글자숫자로 입력 가능합니다";
             return false;
         } else {
-            phonespan.innerHTML = "";
+            Callspan.innerHTML = "";
             return true;
         }
     });
     userPhoneMiddle.addEventListener("blur", () => {
         if (userPhoneMiddle.value === "") {
-            phonespan.innerHTML = `**값을 입력해 주세요.`;
+            Callmidspan.innerHTML = `**중간 값을 입력해 주세요.`;
             return false;
         } else if (!phonemidreg.test(userPhoneMiddle.value)) {
-            phonespan.innerHTML = "**3,4글자숫자로 입력 해주세요.";
+            Callmidspan.innerHTML = "**3,4글자숫자로 입력 해주세요.";
             return false;
         } else {
-            phonespan.innerHTML = "";
+            Callmidspan.innerHTML = "";
             return true;
         }
     });
     userPhoneLast.addEventListener("blur", () => {
         if (userPhoneLast.value === "") {
-            phonespan.innerHTML = `**값을 입력해 주세요.`;
+            Calllastspan.innerHTML = `**마지막 값을 입력해 주세요.`;
             return false;
         } else if (!phonemidreg.test(userPhoneLast.value)) {
-            phonespan.innerHTML = "**3,4글자숫자로 입력 해주세요.";
+            Calllastspan.innerHTML = "**3,4글자숫자로 입력 해주세요.";
             return false;
         } else {
-            phonespan.innerHTML = "";
+            Calllastspan.innerHTML = "";
             return true;
         }
     });
@@ -216,12 +216,10 @@ const blurcheck = () => {
     idblurEvent();
     rpwblurEvent(pwRpwvalue, pwRpwspan);
     nameblurEvent();
-    nickblurEvent();
     birthblurEvent();
     phoneblurEvent();
+    nickblurEvent();
 };
-
-blurcheck();
 
 const printcheck = (check, val, span) => {
     if (!check) {
@@ -274,7 +272,7 @@ const nickcheckHandler = async (e) => {
     let check = await json.check;
 
     if (nickspan.innerHTML !== "중복체크를 해주세요" && nickspan.innerHTML !== "생성이 가능합니다.") {
-        alert("올바른 아이디 형식이 아닙니다.");
+        alert("올바른 닉네임 형식이 아닙니다.");
     } else {
         printcheck(check, nickvalue, nickspan);
     }
@@ -286,25 +284,23 @@ const formHandler = (e) => {
 
 const buttonHandler = (e) => {
     e.preventDefault();
-    const phonelast = findvalue(userPhoneLast, phonespan);
-    const phonemid = findvalue(userPhoneMiddle, phonespan);
-    const birthdd = findvalue(userBirthdd, userBirthspan);
-    const birthmm = findvalue(userBirthmm, userBirthspan);
-    const birthyy = findvalue(userBirthyy, userBirthspan);
-    const nick = findvalue(nickvalue, nickspan);
+    const phonelast = findvalue(userPhoneLast, Calllastspan);
+    const phonemid = findvalue(userPhoneMiddle, Callmidspan);
+    const phone = findvalue(userPhone, Callspan);
+    const birthdd = findvalue(userBirthdd, birddspan);
+    const birthmm = findvalue(userBirthmm, birmmspan);
+    const birthyy = findvalue(userBirthyy, biryyspan);
     const name = findvalue(namevalue, namespan);
     const pwRpw = findvalue(pwRpwvalue, pwRpwspan);
     const pw = findvalue(pwvalue, pwspan);
 
-    if (idspan.innerHTML !== "생성이 가능합니다.") {
-        alert("아이디양식 확인과 중복체크를 완료해주세요");
-        idvalue.focus();
-    } else if (nickspan.innerHTML !== "생성이 가능합니다.") {
+    if (nickspan.innerHTML !== "생성이 가능합니다.") {
         alert("닉네임양식 확인과 중복체크를 완료해주세요");
         nickvalue.focus();
-    } else if (phonemid && phonelast && birthdd && birthmm && birthyy && nick && name && pwRpw && pw) form.submit();
+    } else if (phone && phonemid && phonelast && birthdd && birthmm && birthyy && name && pwRpw && pw) form.submit();
 };
 
+blurcheck();
 nickcheck.addEventListener("click", nickcheckHandler);
 idcheck.addEventListener("click", idcheckHandler);
 form.addEventListener("submit", formHandler);
