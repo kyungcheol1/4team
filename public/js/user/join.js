@@ -2,6 +2,7 @@ const inputli = document.querySelectorAll("#inputBox > li");
 const inputform = document.querySelector("#inputbtn");
 const form = document.querySelector("#inputform");
 const idcheck = document.querySelector("#checkid");
+const nickcheck = document.querySelector("#nickcheckbtn");
 
 const liAll = document.querySelectorAll(".inputli");
 const idvalue = document.querySelector("#userId");
@@ -127,10 +128,12 @@ const nickblurEvent = () => {
             nickspan.innerHTML = `**값을 입력해 주세요.`;
             return false;
         } else if (!reg.test(nickvalue.value)) {
+            nickspan.style.color = "red";
             nickspan.innerHTML = "**닉네임는 2~25자의 영문 대소문자와 숫자, 한글로만 입력하여 주세요.";
             return false;
         } else {
-            nickspan.innerHTML = "";
+            nickspan.style.color = "red";
+            nickspan.innerHTML = "중복체크를 해주세요";
             return true;
         }
     });
@@ -220,21 +223,21 @@ const blurcheck = () => {
 
 blurcheck();
 
-const printcheck = (check) => {
+const printcheck = (check, val, span) => {
     if (!check) {
-        idvalue.focus();
-        idspan.style.color = "red";
-        idspan.innerHTML = "중복 아이디 입니다.";
+        val.focus();
+        span.style.color = "red";
+        span.innerHTML = "중복 아이디 입니다.";
     } else {
-        idspan.style.color = "green";
-        idspan.innerHTML = "생성이 가능합니다.";
+        span.style.color = "green";
+        span.innerHTML = "생성이 가능합니다.";
     }
 };
 
 const idcheckHandler = async (e) => {
     e.preventDefault();
     let id = {
-        userid: idvalue.value,
+        id: idvalue.value,
     };
     let respone = await fetch("http://localhost:3000/user/join/idcheck", {
         method: "POST",
@@ -246,11 +249,34 @@ const idcheckHandler = async (e) => {
     });
     let json = await respone.json();
     let check = await json.check;
-    console.log(check);
+
     if (idspan.innerHTML !== "중복체크를 해주세요" && idspan.innerHTML !== "생성이 가능합니다.") {
         alert("올바른 아이디 형식이 아닙니다.");
     } else {
-        printcheck(check);
+        printcheck(check, idvalue, idspan);
+    }
+};
+
+const nickcheckHandler = async (e) => {
+    e.preventDefault();
+    let nick = {
+        nickName: nickvalue.value,
+    };
+    let respone = await fetch("http://localhost:3000/user/join/idcheck", {
+        method: "POST",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(nick),
+    });
+    let json = await respone.json();
+    let check = await json.check;
+
+    if (nickspan.innerHTML !== "중복체크를 해주세요" && nickspan.innerHTML !== "생성이 가능합니다.") {
+        alert("올바른 아이디 형식이 아닙니다.");
+    } else {
+        printcheck(check, nickvalue, nickspan);
     }
 };
 
@@ -273,9 +299,13 @@ const buttonHandler = (e) => {
     if (idspan.innerHTML !== "생성이 가능합니다.") {
         alert("아이디양식 확인과 중복체크를 완료해주세요");
         idvalue.focus();
+    } else if (nickspan.innerHTML !== "생성이 가능합니다.") {
+        alert("닉네임양식 확인과 중복체크를 완료해주세요");
+        nickvalue.focus();
     } else if (phonemid && phonelast && birthdd && birthmm && birthyy && nick && name && pwRpw && pw) form.submit();
 };
 
+nickcheck.addEventListener("click", nickcheckHandler);
 idcheck.addEventListener("click", idcheckHandler);
 form.addEventListener("submit", formHandler);
 inputform.addEventListener("click", buttonHandler);

@@ -54,9 +54,8 @@ exports.getdelete = async (req, res) => {
 };
 
 exports.postidcheck = async (req, res) => {
-    const { userid } = req.body;
+    const userid = req.body;
     const check = await service.idcheck(userid);
-    console.log(check);
     res.json({ code: "200", message: "sucess!", check });
 };
 

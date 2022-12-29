@@ -16,12 +16,12 @@ exports.login = async (where) => {
 };
 
 exports.findOne = async (userid) => {
-    const [[result]] = await pool.query(`SELECT * FROM user WHERE id="${userid}"`);
+    const [datas] = Object.entries(userid).map(([k, v]) => `${k}="${v}"`);
+    const [[result]] = await pool.query(`SELECT * FROM user WHERE ${datas}`);
     return result;
 };
 
 exports.update = async (userid, data) => {
-    console.log(data);
     const datas = Object.entries(data)
         .map(([k, v]) => `${k}="${v}"`)
         .join(", ");
