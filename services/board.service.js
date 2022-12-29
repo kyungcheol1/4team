@@ -15,6 +15,11 @@ exports.view = async (index) => {
     return result;
 };
 
+exports.findUser = async (idx) => {
+    const result = await repository.findUser(idx); // 해당글의 작성자 스트링
+    return result;
+};
+
 exports.modify = async (modifyvalue) => {
     const result = await repository.modify(modifyvalue);
     return result;
