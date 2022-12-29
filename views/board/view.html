@@ -51,7 +51,7 @@
                         </div>
                         <div id="viewContent">
                             <a href="/board/modify?index={{list.idx}}">수정</a>
-                            <a href="/board/delete?index={{list.idx}}">삭제</a>
+                            <a id="deleteBtn">삭제</a>
                             <div id="content">{{list.content}}</div>
                             <button id="listBnt" onclick="location.href='/board/list'">글목록</button>
                         </div>
@@ -66,5 +66,20 @@
                 </div>
             </div>
         </div>
+
+        <!-- 삭제 경고창 자바스크립트 -->
+        <script type="text/javascript">
+            const deleteBtn = document.querySelector("#deleteBtn");
+
+            const deleteHandler = (e) => {
+                if (!confirm("정말 삭제하시겠습니까?")) {
+                    return false;
+                } else {
+                    location.href = "/board/delete?index={{list.idx}}";
+                }
+            };
+
+            deleteBtn.addEventListener("click", deleteHandler);
+        </script>
     </body>
 </html>
