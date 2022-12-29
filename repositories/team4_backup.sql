@@ -35,13 +35,13 @@ CREATE TABLE reply (
 
 ALTER TABLE reply ADD FOREIGN KEY (postingNum)  REFERENCES board (idx) ON DELETE CASCADE;
 
-INSERT INTO user (id, pw, userName, nickName, birth, phone, isUse) VALUES ('dumy', '1234', 'dumy', 'trash', '00001122', '010-1234-5678', 0);
+INSERT INTO user (id, pw, userName, nickName, birth, phone, isUse) VALUES ('dumy', '1234', 'dumy', 'trash', '0000-11-22', '010-1234-5678', 0);
 
-INSERT INTO user (id, pw, userName, nickName, birth, phone, userLevel) VALUES ('Team4_admin', 'team4admin!@', 'admin', '관리자', '00000101', '010-1234-5678', 3);
+INSERT INTO user (id, pw, userName, nickName, birth, phone, userLevel) VALUES ('Team4_admin', 'team4admin!@', 'admin', '관리자', '0000-01-01', '010-1234-5678', 3);
 
-INSERT INTO user (id, pw, userName, nickName, birth, phone, userLevel) VALUES ('sub_admin', 'subadmin!@', 'sub_admin', '부관리자', '00000101', '010-1234-5678', 2);
+INSERT INTO user (id, pw, userName, nickName, birth, phone, userLevel) VALUES ('sub_admin', 'subadmin!@', 'sub_admin', '부관리자', '0000-01-01', '010-1234-5678', 2);
 
-INSERT INTO user (id, pw, userName, nickName, birth, gender, phone) VALUES ('test', '1234', 'test_user', '테스트계정', '00000201', '여자', '010-1234-5678');
+INSERT INTO user (id, pw, userName, nickName, birth, gender, phone) VALUES ('test', '1234', 'test_user', '테스트계정', '0000-02-01', '여자', '010-1234-5678');
 
 INSERT INTO board (title, writer, content) VALUES ('테스트 제목', '관리자', '가나다라마바사');
 
