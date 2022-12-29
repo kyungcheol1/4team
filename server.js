@@ -1,7 +1,7 @@
 const express = require("express");
 const nunjucks = require("nunjucks");
 const router = require("./routers");
-const cookieParser = require("cookie-parser");
+// const cookieParser = require("cookie-parser");
 
 const app = express();
 

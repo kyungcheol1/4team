@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR";
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+body {
+  background-color: #eef1ff;
+}
+
+.inner {
+  width: 1180px;
+  margin: 0 auto;
+}
+
+#wrap {
+  width: 100%;
+}
+
+#header {
+  width: 100%;
+  height: 80px;
+  background-color: #b1b2ff;
+}
+
+#head {
+  width: 100%;
+  text-align: center;
+}
+
+#login_wrap {
+  margin-top: 120px;
+  text-align: center;
+}
+
+#login_box {
+  width: 100%;
+  height: 550px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+#login_header {
+  padding: 14px;
+  width: 100%;
+  height: 100px;
+  background-color: #b1b2ff;
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#login_content_box {
+  width: 100%;
+  padding: 60px;
+}
+
+#login_text {
+  margin-bottom: 40px;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+#id_input_box {
+  display: flex;
+  width: 400px;
+  height: 50px;
+  margin: 0 auto 40px auto;
+  border-radius: 10px;
+  background-color: #d2daff;
+  border: 1px solid #d2daff;
+}
+
+#id_input_text {
+  display: inline-block;
+  width: 50px;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 10px 0 0 10px;
+  padding: 7px 12px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#id_input {
+  width: 350px;
+  height: 100%;
+  padding: 10px 20px;
+}
+
+#id_input > input {
+  width: 100%;
+  height: 100%;
+  background-color: #d2daff;
+  border: none;
+  font-size: 20px;
+}
+
+#pw_input_box {
+  display: flex;
+  width: 400px;
+  height: 50px;
+  margin: 0 auto 40px auto;
+  border-radius: 10px;
+  background-color: #d2daff;
+  border: 1px solid #d2daff;
+}
+
+#pw_input_text {
+  display: inline-block;
+  width: 50px;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 10px 0 0 10px;
+  padding: 7px 0px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#pw_input {
+  width: 350px;
+  height: 100%;
+  padding: 10px 20px;
+}
+
+#pw_input > input {
+  width: 100%;
+  height: 100%;
+  background-color: #d2daff;
+  border: none;
+  font-size: 20px;
+}
+
+#login_btn {
+  width: 400px;
+  height: 50px;
+  background-color: #b1b2ff;
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+}

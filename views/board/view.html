@@ -40,20 +40,20 @@
                     <h1>게시판</h1>
                     <div id="boardContent">
                         <div id="top">
-                            <h4>제목입니다</h4>
+                            <h4>{{list.title}}</h4>
                             <ul>
-                                <li>관리자</li>
+                                <li>{{list.writer}}</li>
+                                <!-- <span>│</span>
+                                <li>{{list.registerDate}}{</li> -->
                                 <span>│</span>
-                                <li>22-12-25</li>
-                                <span>│</span>
-                                <li>조회수 0</li>
+                                <li>조회수 {{list.hit}}</li>
                             </ul>
                         </div>
                         <div id="viewContent">
-                            <a href="/board/modify">수정</a>
-                            <a href="/board/delete">삭제</a>
-                            <div id="content">글 내용 어쩌구저쩌구</div>
-                            <button id="listBnt">글목록</button>
+                            <a href="/board/modify?index={{list.idx}}">수정</a>
+                            <a href="/board/delete?index={{list.idx}}">삭제</a>
+                            <div id="content">{{list.content}}</div>
+                            <button id="listBnt" onclick="location.href='/board/list'">글목록</button>
                         </div>
                         <div id="reply">
                             <span><img src="/img/Vector.png" /> 댓글 0개</span><br />
@@ -68,4 +68,3 @@
         </div>
     </body>
 </html>
-

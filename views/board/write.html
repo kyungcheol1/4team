@@ -41,7 +41,7 @@
                     <div id="boardContent">
                         <div id="top"><h4>글쓰기</h4></div>
                         <div id="writeContent">
-                            <form method="post" action="/write">
+                            <form method="post" action="/board/write">
                                 <ul>
                                     <li>
                                         <input type="text" name="title" placeholder="제목을 입력해주세요" />
@@ -51,9 +51,9 @@
                                         <textarea name="content" placeholder="내용을 입력해주세요"></textarea>
                                     </li>
                                 </ul>
-                                <button id="cancelBtn" type="submit">취소</button>
                                 <button id="submitBtn" type="submit">등록</button>
                             </form>
+                            <button id="cancelBtn" onclick="location.href='/board/list'">취소</button>
                         </div>
                     </div>
                 </div>
@@ -61,4 +61,3 @@
         </div>
     </body>
 </html>
-
