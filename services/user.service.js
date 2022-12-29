@@ -77,11 +77,3 @@ const renddata = (result) => {
     return item;
 };
 
-// const postlogin = async ({ userId, userPw }) => {
-//     const where = { userId, userPw };
-//     const result = await repo.login(where);
-//     return result;
-// };
-
-// postlogin(test);
-
