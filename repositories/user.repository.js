@@ -1,49 +1,34 @@
 const pool = require("./db");
 
 exports.create = async (user) => {
-  const { id, pw, name, nickName, birth, gender, phone, tel } = user;
-  const userdb = "id, pw, userName, nickName, birth, gender, phone, tel";
-  const item = [id, pw, name, nickName, birth, gender, phone, tel].map((v) => `"${v}"`).join(", ");
-  await pool.query(`INSERT INTO user(${userdb}) value(${item});`);
-  const [nick] = await pool.query(`SELECT nickName FROM user WHERE nickName="${nickName}"`);
-  return nick;
+    const { id, pw, userName, nickName, birth, gender, phone, tel } = user;
+    const userdb = "id, pw, userName, nickName, birth, gender, phone, tel";
+    const item = [id, pw, userName, nickName, birth, gender, phone, tel].map((v) => `"${v}"`).join(", ");
+    await pool.query(`INSERT INTO user(${userdb}) value(${item});`);
+    const [userid] = await pool.query(`SELECT id FROM user WHERE id="${id}"`);
+    return userid;
 };
 
 exports.login = async (where) => {
-  const { userId, userPw } = where;
-  const [[result]] = await pool.query(`SELECT * FROM user WHERE id="${userId}" and pw="${userPw}";`);
-  //   console.log(result);
-  return result;
+    const { userId, userPw } = where;
+    const [[result]] = await pool.query(`SELECT * FROM user WHERE id="${userId}" and pw="${userPw}";`);
+    return result;
 };
 
-// const where = { userId: "qwe", userPw: "qwe" };
-// const login = async ({ user_id, user_pw }) => {
-//     const result = await pool.query(`SELECT * FROM user WHERE id="${user_id}" and pw="${user_pw}";`);
-//     await pool.query(`SELECT * FROM user WHERE`);
-// };
+exports.findOne = async (userid) => {
+    const [[result]] = await pool.query(`SELECT * FROM user WHERE id="${userid}"`);
+    return result;
+};
 
-// const create = async () => {
-//     const user = {
-//         id: "qwe",
-//         pw: "qwr",
-//         name: "asf",
-//         nuckName: "123",
-//         birth: "123",
-//         gender: "남자",
-//         phone: "123213",
-//         tel: "124124124",
-//     };
-//     const { id, pw, name, nickName, birth, gender, phone, tel } = user;
-//     const userdb = "id, pw, name, nickName, birth, gender, phone, tel";
-//     const item = [id, pw, name, nickName, birth, gender, phone, tel].map((v) => `"${v}"`).join(" ");
-// };
+exports.update = async (userid, data) => {
+    const datas = Object.entries(data)
+        .map(([k, v]) => `${k}="${v}"`)
+        .join(", ");
+    console.log(datas);
+    await pool.query(`UPDATE user SET ${datas} WHERE id="${userid}"`);
+};
 
-// create();
+exports.delete = async (id) => {
+    await pool.query(`DELETE FROM user where id="${id}"`);
+};
 
-// const create = async (user) => {
-//     const userdb = "id, pw, name. nickName, birth, gender, phone, tel, level, registerDate";
-//     console.log(user);
-//     const [ins] = await pool.query(`INSERT INTO user(${userdb}) value(${login})`);
-// };
-
-// create();

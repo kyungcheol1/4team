@@ -26,28 +26,28 @@
                         </div>
                         <div id="content">
                             <h3>
-                                {{userNickname}}님을 환영합니다!
+                                {{list.nickName}}님을 환영합니다!
                                 <span>입력한 내용을 확인해주세요.</span>
                             </h3>
                             <ul>
                                 <li>
                                     <p>아이디</p>
-                                    <div>{{userId}}</div>
+                                    <div>{{list.id}}</div>
                                 </li>
                                 <li>
                                     <p>이름</p>
-                                    <div>{{userName}}</div>
+                                    <div>{{list.userName}}</div>
                                 </li>
                                 <li>
                                     <p>성별</p>
-                                    <div>{{userGender}}</div>
+                                    <div>{{list.gender}}</div>
                                 </li>
                                 <li id="phone">
                                     <p>휴대전화</p>
                                     <ul>
-                                        <li>{{userPhone}}</li>
-                                        <li>{{Middle}}</li>
-                                        <li>{{Last}}</li>
+                                        <li>{{list.userPhone}}</li>
+                                        <li>{{list.userPhoneMiddle}}</li>
+                                        <li>{{list.userPhoneLast}}</li>
                                     </ul>
                                 </li>
                             </ul>

@@ -23,53 +23,53 @@
                     <div id="profile">
                         <h2>Profile</h2>
                         <div id="textSpace">
-                            <form>
+                            <form method="post" action="/user/profile">
                                 <ul>
                                     <li class="fixed">
                                         <p>아이디</p>
-                                        <div>{{userId}}</div>
+                                        <input type="text" name="id" value="{{list.id}}" readonly />
                                     </li>
                                     <li>
                                         <p>비밀번호</p>
-                                        <input type="password" name="userPw" placeholder="새로운 비밀번호를 입력해주세요" />
+                                        <input type="password" name="pw" placeholder="새로운 비밀번호를 입력해주세요" value="{{list.pw}}" />
                                     </li>
                                     <li>
                                         <p>비밀번호 확인</p>
-                                        <input type="password" name="userRpw" placeholder="비밀번호를 다시 입력해주세요" />
+                                        <input type="password" name="userRpw" placeholder="비밀번호를 다시 입력해주세요" value="{{list.pw}}" />
                                     </li>
                                     <li class="fixed">
                                         <p>이름</p>
-                                        <div>{{userName}}</div>
+                                        <input type="text" name="userName" value="{{list.userName}}" readonly />
                                     </li>
                                     <li class="userNick">
                                         <p>닉네임</p>
-                                        <input type="text" name="userNickname" placeholder="새로운 닉네임 입력해주세요" value="{{userNickname}}" />
+                                        <input type="text" name="nickName" placeholder="새로운 닉네임 입력해주세요" value="{{list.nickName}}" />
                                         <button>중복확인</button>
                                     </li>
                                     <li id="userBirth">
                                         <p>생년월일</p>
                                         <div>
-                                            <input type="text" name="userBirthyy" placeholder="년(4자)" vlaue="{{userBirthyy}}" />
-                                            <select name="userBirthmm" id="" value="{{userBirthmm}}">
-                                                <option value="1">1월</option>
-                                                <option value="2">2월</option>
-                                                <option value="3">3월</option>
-                                                <option value="4">4월</option>
-                                                <option value="5">5월</option>
-                                                <option value="6">6월</option>
-                                                <option value="7">7월</option>
-                                                <option value="8">8월</option>
-                                                <option value="9">9월</option>
+                                            <input type="text" name="userBirthyy" placeholder="년(4자)" value="{{list.userBirthyy}}" />
+                                            <select name="userBirthmm" id="" selected="{{list.userBirthmm}}">
+                                                <option value="01">1월</option>
+                                                <option value="02">2월</option>
+                                                <option value="03">3월</option>
+                                                <option value="04">4월</option>
+                                                <option value="05">5월</option>
+                                                <option value="06">6월</option>
+                                                <option value="07">7월</option>
+                                                <option value="08">8월</option>
+                                                <option value="09">9월</option>
                                                 <option value="10">10월</option>
                                                 <option value="11">11월</option>
                                                 <option value="12">12월</option>
                                             </select>
-                                            <input type="text" name="userBirthdd" placeholder="일" value="{{userBirthdd}}" />
+                                            <input type="text" name="userBirthdd" placeholder="일" value="{{list.userBirthdd}}" />
                                         </div>
                                     </li>
                                     <li>
                                         <p>성별</p>
-                                        <select name="userGender" id="" value="{{userGender}}">
+                                        <select name="gender" id="" value="{{list.gender}}">
                                             <option value="남자">남자</option>
                                             <option value="여자">여자</option>
                                         </select>
@@ -77,17 +77,17 @@
                                     <li class="phone">
                                         <p>휴대전화</p>
                                         <div>
-                                            <input type="text" name="userPhone" value="{{userPhone}}" />
-                                            <input type="text" name="userPhoneMiddle" value="{{userPhoneMiddle}}" />
-                                            <input type="text" name="userPhoneLast" value="{{userPhoneLast}}" />
+                                            <input type="text" name="userPhone" value="{{list.userPhone}}" />
+                                            <input type="text" name="userPhoneMiddle" value="{{list.userPhoneMiddle}}" />
+                                            <input type="text" name="userPhoneLast" value="{{list.userPhoneLast}}" />
                                         </div>
                                     </li>
                                     <li class="phone">
                                         <p>일반전화(선택)</p>
                                         <div>
-                                            <input type="text" name="userCall" value="{{userCall}}" />
-                                            <input type="text" name="userCallMiddle" value="{{userCallMiddle}}" />
-                                            <input type="text" name="userCallLast" value="{{userCallLast}}" />
+                                            <input type="text" name="userCall" value="{{list.userCall}}" />
+                                            <input type="text" name="userCallMiddle" value="{{list.userCallMiddle}}" />
+                                            <input type="text" name="userCallLast" value="{{list.userCallLast}}" />
                                         </div>
                                     </li>
                                     <li>
@@ -95,6 +95,9 @@
                                     </li>
                                 </ul>
                             </form>
+                            <div id="delete">
+                                <button><a class="deletea" href="/user/delete">회원탈퇴</a></button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -103,6 +106,7 @@
                 <div class="inner"></div>
             </div>
         </div>
+        <script text="text/javascript" src="/js/user/profile.js"></script>
     </body>
 </html>
 

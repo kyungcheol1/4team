@@ -27,13 +27,13 @@
                                 <ul id="inputBox">
                                     <li class="userId">
                                         <p>아이디</p>
-                                        <input type="text" name="userId" id="userId" placeholder="아이디를 입력해주세요" />
-                                        <button>중복확인</button>
+                                        <input type="text" name="id" id="userId" placeholder="아이디를 입력해주세요" />
+                                        <button id="checkid" type="submit">중복확인</button>
                                         <span></span>
                                     </li>
                                     <li class="userPw">
                                         <p>비밀번호</p>
-                                        <input type="password" name="userPw" id="userPw" placeholder="비밀번호를 입력해주세요" />
+                                        <input type="password" name="pw" id="userPw" placeholder="비밀번호를 입력해주세요" />
                                         <span></span>
                                     </li>
                                     <li class="userRpw">
@@ -48,7 +48,7 @@
                                     </li>
                                     <li class="userNick">
                                         <p>닉네임</p>
-                                        <input type="text" name="userNickname" id="userNickname" placeholder="닉네임 입력해주세요" />
+                                        <input type="text" name="nickName" id="userNickname" placeholder="닉네임 입력해주세요" />
                                         <button>중복확인</button>
                                         <span></span>
                                     </li>
@@ -76,7 +76,7 @@
                                     </li>
                                     <li class="userGender">
                                         <p>성별</p>
-                                        <select name="userGender" id="userGender">
+                                        <select name="gender" id="userGender">
                                             <option value="남자">남자</option>
                                             <option value="여자">여자</option>
                                         </select>
@@ -101,7 +101,7 @@
                                         <span></span>
                                     </li>
                                     <li>
-                                        <button type="submit">가입하기</button>
+                                        <button id="inputbtn" type="submit">가입하기</button>
                                     </li>
                                 </ul>
                             </form>
@@ -113,7 +113,7 @@
                 <div class="inner"></div>
             </div>
         </div>
-        <script src="/js/user/join.js"></script>
+        <script type="text/javascript" src="/js/user/join.js"></script>
     </body>
 </html>
 
