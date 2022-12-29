@@ -25,8 +25,7 @@ exports.getuserinfo = async (userid) => {
 
 exports.idcheck = async (userid) => {
     const result = await repo.findOne(userid);
-    const tandf = result === undefined ? 1 : 0;
-    console.log(tandf);
+    const tandf = result === undefined ? true : false;
     return tandf;
 };
 
