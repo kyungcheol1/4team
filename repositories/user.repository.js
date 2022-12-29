@@ -21,10 +21,10 @@ exports.findOne = async (userid) => {
 };
 
 exports.update = async (userid, data) => {
+    console.log(data);
     const datas = Object.entries(data)
         .map(([k, v]) => `${k}="${v}"`)
         .join(", ");
-    console.log(datas);
     await pool.query(`UPDATE user SET ${datas} WHERE id="${userid}"`);
 };
 
