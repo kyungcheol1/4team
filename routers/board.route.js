@@ -14,4 +14,7 @@ router.post("/modify", boardcontroller.enter, boardcontroller.postmodify);
 
 router.get("/delete", boardcontroller.enter, boardcontroller.getdelete);
 
+router.post("/view/reply", boardcontroller.postreply);
+
 module.exports = router;
+

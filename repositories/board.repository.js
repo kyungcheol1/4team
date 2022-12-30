@@ -40,3 +40,12 @@ exports.delete = async (idx) => {
 //     const [count] = await pool.query(`UPDATE board SET hit=hit+1 WHERE idx=${idx}`);
 //     return;
 // };
+
+exports.insertreply = async (writer, content) => {
+    console.log(writer, content);
+
+    // await pool.query(`INSERT INTO reply() value()`);
+    // const [list] = await pool.query(`SELECT * FROM reply WHERE postingNum=${2}`);
+    return;
+};
+
