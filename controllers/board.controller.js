@@ -64,10 +64,6 @@ exports.getmodify = async (req, res) => {
         const [list] = await service.view(idx);
         res.render("board/modify", { list });
     }
-
-    // const idx = req.query.index;
-    // const [list] = await service.view(idx);
-    // res.render("board/modify", { list });
 };
 
 exports.postmodify = async (req, res) => {
