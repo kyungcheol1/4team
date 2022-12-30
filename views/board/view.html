@@ -50,8 +50,10 @@
                             </ul>
                         </div>
                         <div id="viewContent">
+                            {%if list.cookies == list.writer %}
                             <a href="/board/modify?index={{list.idx}}">수정</a>
                             <a id="deleteBtn">삭제</a>
+                            {%endif%}
                             <div id="content">{{list.content}}</div>
                             <button id="listBnt" onclick="location.href='/board/list'">글목록</button>
                         </div>

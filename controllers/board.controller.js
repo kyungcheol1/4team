@@ -41,29 +41,35 @@ exports.postwrite = async (req, res) => {
 exports.getview = async (req, res) => {
     const idx = req.query.index;
     const [list] = await service.view(idx);
+    const [cookie] = req.headers.cookie.split(";").map((v) => v.split("="));
+    list.cookies = cookie[1];
     res.render("board/view", { list });
 };
 
 exports.getmodify = async (req, res) => {
     const idx = req.query.index;
-    const userId = req.headers.cookie
-        .split(";")
-        .map((v) => v.split("="))
-        .reduce((acc, [k, v]) => {
-            acc[k.trim()] = v;
-            return acc;
-        }, {});
-    const tandf = await service.findUser(idx);
-    if (tandf !== userId.id) {
-        res.send(`
-        <script type="text/javascript">
-        history.back()
-    </script>
-        `);
-    } else {
-        const [list] = await service.view(idx);
-        res.render("board/modify", { list });
-    }
+    let [list] = await service.view(idx);
+    res.render("board/modify", { list });
+
+    // const idx = req.query.index;
+    // const userId = req.headers.cookie
+    //     .split(";")
+    //     .map((v) => v.split("="))
+    //     .reduce((acc, [k, v]) => {
+    //         acc[k.trim()] = v;
+    //         return acc;
+    //     }, {});
+    // const tandf = await service.findUser(idx);
+    // if (tandf !== userId.id) {
+    //     res.send(`
+    //     <script type="text/javascript">
+    //     history.back()
+    // </script>
+    //     `);
+    // } else {
+    //     const [list] = await service.view(idx);
+    //     res.render("board/modify", { list });
+    // }
 };
 
 exports.postmodify = async (req, res) => {
