@@ -15,7 +15,6 @@ exports.insert = async (write) => {
 exports.findOne = async (idx) => {
     await pool.query(`UPDATE board SET hit=hit+1 WHERE idx=${idx}`);
     const [sql, field] = await pool.query(`SELECT idx, title, writer, content, date_format (registerDate,'%y-%m-%d %h:%i') as registerDate, hit FROM board WHERE idx=${idx}`);
-    // const [sql, field] = await pool.query(`SELECT * FROM board WHERE idx=${idx}`);
     return sql;
 };
 
@@ -36,16 +35,12 @@ exports.delete = async (idx) => {
     return del;
 };
 
-// exports.hitcount = async (idx) => {
-//     const [count] = await pool.query(`UPDATE board SET hit=hit+1 WHERE idx=${idx}`);
-//     return;
-// };
-
-exports.insertreply = async (writer, content) => {
-    console.log(writer, content);
-
-    // await pool.query(`INSERT INTO reply() value()`);
-    // const [list] = await pool.query(`SELECT * FROM reply WHERE postingNum=${2}`);
-    return;
+exports.replyAll = async (pageidx) => {
+    const [list] = await pool.query(`SELECT idx, content, writer, postingNum, date_format (registerDate,'%y-%m-%d %h:%i') as registerDate FROM reply WHERE postingNum=${pageidx}`);
+    return list;
 };
 
+exports.insertreply = async (reply, writer, pageidx) => {
+    const insert = await pool.query(`INSERT INTO reply(content, writer, postingNum) value("${reply.content}","${writer.id}","${pageidx}")`);
+    return pageidx;
+};

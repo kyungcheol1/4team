@@ -63,6 +63,15 @@
                             관리자
                             <br />
                             <input type="text" name="reply" placeholder="댓글 입력하기" />
+                            <div>
+                                <br />
+                                <ul>
+                                    <li>안농하세용</li>
+                                    {% for item in reply %}
+                                    <li>{{item.content}} {{item.writer}} {{item.registerDate}}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -86,4 +95,3 @@
         </script>
     </body>
 </html>
-
