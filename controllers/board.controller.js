@@ -83,3 +83,11 @@ exports.getdelete = async (req, res) => {
     const deletevalue = await service.delete(idx);
     res.redirect("/board/list");
 };
+exports.postreply = async (req, res) => {
+    const writer = req.cookies;
+    const reply = req.body;
+    const idx = req.query.index;
+    console.log(idx);
+    const list = await service.replylist(writer, reply);
+    res.redirect(`view?index=${idx}`);
+};
