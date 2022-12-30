@@ -29,28 +29,28 @@
                                         <p>아이디</p>
                                         <input type="text" name="id" id="userId" placeholder="아이디를 입력해주세요" />
                                         <button id="checkid" type="submit">중복확인</button>
-                                        <span></span>
+                                        <span class="idspan"></span>
                                     </li>
                                     <li class="userPw">
                                         <p>비밀번호</p>
                                         <input type="password" name="pw" id="userPw" placeholder="비밀번호를 입력해주세요" />
-                                        <span></span>
+                                        <span class="pwspan"></span>
                                     </li>
                                     <li class="userRpw">
                                         <p>비밀번호 확인</p>
                                         <input type="password" name="userRpw" id="userRpw" placeholder="비밀번호를 다시 입력해주세요" />
-                                        <span></span>
+                                        <span class="rpwspan"></span>
                                     </li>
                                     <li class="userName">
                                         <p>이름</p>
                                         <input type="text" name="userName" id="userName" placeholder="이름을 입력해주세요" />
-                                        <span></span>
+                                        <span class="usernamespan"></span>
                                     </li>
                                     <li class="userNick">
                                         <p>닉네임</p>
                                         <input type="text" name="nickName" id="userNickname" placeholder="닉네임 입력해주세요" />
-                                        <button type="button" id="nickcheckbtn">중복확인</button>
-                                        <span></span>
+                                        <button type="click" id="nickcheckbtn">중복확인</button>
+                                        <span class="usernickspan"></span>
                                     </li>
                                     <li id="userBirth">
                                         <p>생년월일</p>
@@ -72,7 +72,9 @@
                                             </select>
                                             <input type="text" name="userBirthdd" id="userBirthdd" placeholder="일" />
                                         </div>
-                                        <span></span>
+                                        <span class="userBirthyyspan"></span>
+                                        <span class="userBirthmmspan"></span>
+                                        <span class="userBirthddspan"></span>
                                     </li>
                                     <li class="userGender">
                                         <p>성별</p>
@@ -89,16 +91,20 @@
                                             <input type="text" name="userPhoneMiddle" id="userPhoneMiddle" />
                                             <input type="text" name="userPhoneLast" id="userPhoneLast" />
                                         </div>
-                                        <span></span>
+                                        <span class="userPhonespan"></span>
+                                        <span class="userPhoneMiddlespan"></span>
+                                        <span class="userPhoneLastspan"></span>
                                     </li>
                                     <li class="phone">
                                         <p>일반전화(선택)</p>
                                         <div>
-                                            <input type="text" name="userCall" />
-                                            <input type="text" name="userCallMiddle" />
-                                            <input type="text" name="userCallLast" />
+                                            <input id="userCall" type="text" name="userCall" />
+                                            <input id="userCallMiddle" type="text" name="userCallMiddle" />
+                                            <input id="userCallLast" type="text" name="userCallLast" />
                                         </div>
-                                        <span></span>
+                                        <span class="userCallspan"></span>
+                                        <span class="userCallMiddlespan"></span>
+                                        <span class="userCallLastspan"></span>
                                     </li>
                                     <li>
                                         <button id="inputbtn" type="submit">가입하기</button>

@@ -23,19 +23,21 @@
                     <div id="profile">
                         <h2>Profile</h2>
                         <div id="textSpace">
-                            <form method="post" action="/user/profile">
+                            <form id="inputform" method="post" action="/user/profile">
                                 <ul>
                                     <li class="fixed">
                                         <p>아이디</p>
                                         <input type="text" name="id" value="{{list.id}}" readonly />
                                     </li>
-                                    <li>
+                                    <li class="userPw">
                                         <p>비밀번호</p>
-                                        <input type="password" name="pw" placeholder="새로운 비밀번호를 입력해주세요" value="{{list.pw}}" />
+                                        <input id="userPw" type="password" name="pw" placeholder="새로운 비밀번호를 입력해주세요" value="{{list.pw}}" />
+                                        <span></span>
                                     </li>
-                                    <li>
+                                    <li class="userRpw">
                                         <p>비밀번호 확인</p>
-                                        <input type="password" name="userRpw" placeholder="비밀번호를 다시 입력해주세요" value="{{list.pw}}" />
+                                        <input id="userRpw" type="password" name="userRpw" placeholder="비밀번호를 다시 입력해주세요" value="{{list.pw}}" />
+                                        <span></span>
                                     </li>
                                     <li class="fixed">
                                         <p>이름</p>
@@ -43,13 +45,15 @@
                                     </li>
                                     <li class="userNick">
                                         <p>닉네임</p>
-                                        <input type="text" name="nickName" placeholder="새로운 닉네임 입력해주세요" value="{{list.nickName}}" />
-                                        <button>중복확인</button>
+                                        <input id="beforenick" type="hidden" value="{{list.nickName}}" />
+                                        <input id="userNickname" type="text" name="nickName" placeholder="새로운 닉네임 입력해주세요" value="{{list.nickName}}" />
+                                        <button type="click" id="nickcheckbtn">중복확인</button>
+                                        <span>변경이 가능합니다.</span>
                                     </li>
                                     <li id="userBirth">
                                         <p>생년월일</p>
                                         <div>
-                                            <input type="text" name="userBirthyy" placeholder="년(4자)" value="{{list.userBirthyy}}" />
+                                            <input id="userBirthyy" type="text" name="userBirthyy" placeholder="년(4자)" value="{{list.userBirthyy}}" />
                                             <input type="hidden" name="userBirthmmname" id="userBirthmmname" value="{{list.userBirthmm}}" />
                                             <select name="userBirthmm" id="userBirthmm">
                                                 <option value="01">1월</option>
@@ -65,12 +69,15 @@
                                                 <option value="11">11월</option>
                                                 <option value="12">12월</option>
                                             </select>
-                                            <input type="text" name="userBirthdd" placeholder="일" value="{{list.userBirthdd}}" />
+                                            <input id="userBirthdd" type="text" name="userBirthdd" placeholder="일" value="{{list.userBirthdd}}" />
                                         </div>
+                                        <span class="userBirthyy"></span>
+                                        <span class="userBirthmm"></span>
+                                        <span class="userBirthdd"></span>
                                     </li>
-                                    <li>
+                                    <li class="userGender">
                                         <p>성별</p>
-                                        <input type="hidden" id="genderval" value="{{list.gender}}" />
+                                        <input type="hidden" id="userGender" value="{{list.gender}}" />
                                         <select name="gender" id="gender">
                                             <option value="남자">남자</option>
                                             <option value="여자">여자</option>
@@ -79,10 +86,13 @@
                                     <li class="phone">
                                         <p>휴대전화</p>
                                         <div>
-                                            <input type="text" name="userPhone" value="{{list.userPhone}}" />
-                                            <input type="text" name="userPhoneMiddle" value="{{list.userPhoneMiddle}}" />
-                                            <input type="text" name="userPhoneLast" value="{{list.userPhoneLast}}" />
+                                            <input id="userPhone" type="text" name="userPhone" value="{{list.userPhone}}" />
+                                            <input id="userPhoneMiddle" type="text" name="userPhoneMiddle" value="{{list.userPhoneMiddle}}" />
+                                            <input id="userPhoneLast" type="text" name="userPhoneLast" value="{{list.userPhoneLast}}" />
                                         </div>
+                                        <span class="userCall"></span>
+                                        <span class="userCallMiddle"></span>
+                                        <span class="userCallLast"></span>
                                     </li>
                                     <li class="phone">
                                         <p>일반전화(선택)</p>
@@ -93,7 +103,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <button type="submit">수정하기</button>
+                                        <button id="inputbtn" type="submit">수정하기</button>
                                     </li>
                                 </ul>
                             </form>

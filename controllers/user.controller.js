@@ -24,12 +24,14 @@ exports.postjoin = async (req, res) => {
 
 exports.getwelcome = async (req, res) => {
     const { userid } = req.query;
-    const list = await service.getuserinfo(userid);
+    const id = { id: userid };
+    const list = await service.getuserinfo(id);
     res.render("user/welcome", { list });
 };
 
 exports.getprofile = async (req, res) => {
-    const { id } = req.cookies;
+    const userid = req.cookies.id;
+    const id = { id: userid };
     const list = await service.getuserinfo(id);
     res.render("user/profile", { list });
 };
