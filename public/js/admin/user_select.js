@@ -1,7 +1,7 @@
 const userLevelCheck = document.querySelector("#userLevelCheck");
 const userLevel = document.querySelectorAll("#user_level > option");
-const isUseCheck = document.querySelector("#isUseCheck");
-const isUse = document.querySelectorAll("#is_use > option");
+const userisUseCheck = document.querySelector("#isUseCheck");
+const userisUse = document.querySelectorAll("#is_use > option");
 const userBirthmmCheck = document.querySelector("#userBirthmmCheck");
 const userBirthmm = document.querySelectorAll("#userBirthmm > option");
 const userGenderCheck = document.querySelector("#userGenderCheck");
@@ -16,6 +16,6 @@ const optionSelect = (standard, selectVal) => {
 };
 
 optionSelect(userLevelCheck, userLevel);
-optionSelect(isUseCheck, isUse);
+optionSelect(userisUseCheck, userisUse);
 optionSelect(userBirthmmCheck, userBirthmm);
 optionSelect(userGenderCheck, userGender);

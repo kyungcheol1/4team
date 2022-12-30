@@ -26,8 +26,9 @@ exports.getEditUser = async (req, res) => {
 
 exports.postEditUser = async (req, res) => {
   const cookie = req.cookies.id;
+  const id = req.query.id;
   const userData = req.body;
-  const result = await service.postEditUSer({ userData, cookie });
+  const result = await service.postEditUSer({ userData, cookie, id });
   if (result === undefined) return res.send("<script>alert('잘못된 접근입니다.');location.href=`/admin`</script>");
   res.send("test");
 };
