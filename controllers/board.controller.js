@@ -9,8 +9,8 @@ exports.enter = (req, res, next) => {
         history.back()
       </script>
        `);
-    }
-    next();
+    } else next();
+    return;
 };
 
 exports.getlist = async (req, res) => {
