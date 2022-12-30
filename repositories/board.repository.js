@@ -1,21 +1,21 @@
 const pool = require("./db");
 
 exports.findAll = async () => {
-    const [value] = await pool.query(`SELECT * FROM board order by idx desc`);
-    // SELECT date_format(registerDate,'%y-%m-%d %h:%i') from board;
-    // const [test] = await pool.query(`SELECT date_format(registerDate,'%y-%m-%d %h:%i') from board`);
+    const [value] = await pool.query(`SELECT idx, title, writer, content, date_format (registerDate,'%y-%m-%d %h:%i') as registerDate, hit from board order by idx desc`);
     return value;
 };
 
 exports.insert = async (write) => {
     const [ins] = await pool.query(`INSERT INTO board(title, content, writer) value("${write.title}", "${write.content}", "${write.id}")`);
     const idx = ins.insertId;
+    await pool.query(`UPDATE board SET hit=hit-1 WHERE idx=${idx}`);
     return idx;
 };
 
 exports.findOne = async (idx) => {
     await pool.query(`UPDATE board SET hit=hit+1 WHERE idx=${idx}`);
-    const [sql, field] = await pool.query(`SELECT * FROM board WHERE idx=${idx}`);
+    const [sql, field] = await pool.query(`SELECT idx, title, writer, content, date_format (registerDate,'%y-%m-%d %h:%i') as registerDate, hit FROM board WHERE idx=${idx}`);
+    // const [sql, field] = await pool.query(`SELECT * FROM board WHERE idx=${idx}`);
     return sql;
 };
 

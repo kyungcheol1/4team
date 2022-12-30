@@ -43,15 +43,17 @@
                             <h4>{{list.title}}</h4>
                             <ul>
                                 <li>{{list.writer}}</li>
-                                <!-- <span>│</span>
-                                <li>{{list.registerDate}}{</li> -->
+                                <span>│</span>
+                                <li>{{list.registerDate}}</li>
                                 <span>│</span>
                                 <li>조회수 {{list.hit}}</li>
                             </ul>
                         </div>
                         <div id="viewContent">
+                            {%if list.cookies == list.writer %}
                             <a href="/board/modify?index={{list.idx}}">수정</a>
                             <a id="deleteBtn">삭제</a>
+                            {%endif%}
                             <div id="content">{{list.content}}</div>
                             <button id="listBnt" onclick="location.href='/board/list'">글목록</button>
                         </div>
