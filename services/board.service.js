@@ -28,3 +28,9 @@ exports.modify = async (modifyvalue) => {
 exports.delete = async (idx) => {
     const result = await repository.delete(idx);
 };
+
+exports.replylist = async (writer, reply) => {
+    const list = await repository.insertreply(writer, reply);
+    return list;
+};
+
