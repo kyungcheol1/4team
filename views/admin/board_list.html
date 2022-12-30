@@ -13,12 +13,12 @@
         <div class="inner">
           <div id="logo_board">
             <div>
-              <a href="/"><img src="/img/Logo.png" alt="LOGO" /></a>
+              <a href="/admin/boardList"><img src="/img/Logo.png" alt="LOGO" /></a>
             </div>
             <div id="board_btn"><a href="/board/list">게시판</a></div>
           </div>
           <div id="login_join">
-            <a id="profile" href="/admin/userEdit">회원정보</a>
+            <a id="profile" href="/admin/userEdit/?id={{cookie}}">회원정보</a>
             <a id="logout" href="/">로그아웃</a>
           </div>
         </div>
@@ -32,7 +32,7 @@
       <div id="board_wrap">
         <div class="inner">
           <ul id="board_header">
-            <li class="board_id">번호</li>
+            <li class="board_idx">번호</li>
             <li class="board_title">제목</li>
             <li class="board_nickName">작성자</li>
             <li class="board_registerDate">등록일</li>
@@ -42,26 +42,18 @@
         </div>
         <div id="content_wrap">
           <div class="inner">
+            {% for item in result %}
             <ul class="board_contents">
-              <li class="board_id">0</li>
-              <li class="board_title">테스트 제목</li>
-              <li class="board_nickName">관리자</li>
-              <li class="board_registerDate">22-02-01</li>
-              <li class="board_views">0</li>
+              <li class="board_idx">{{item.idx}}</li>
+              <li class="board_title">{{item.title}}</li>
+              <li class="board_nickName">{{item.writer}}</li>
+              <li class="board_registerDate">{{item.registerDate}}</li>
+              <li class="board_views">{{item.hit}}</li>
               <li class="board_delete">
-                <a href="/admin/userList/?idx=0"><img src="/img/delete_btn.svg" alt="modify_btn" /></a>
+                <a href="/admin/delete/?idx={{item.idx}}"><img src="/img/delete_btn.svg" alt="modify_btn" /></a>
               </li>
             </ul>
-            <ul class="board_contents">
-              <li class="board_id">0</li>
-              <li class="board_title">테스트 제목</li>
-              <li class="board_nickName">관리자</li>
-              <li class="board_registerDate">22-02-01</li>
-              <li class="board_views">0</li>
-              <li class="board_delete">
-                <a href="/admin/userList/?idx=1"><img src="/img/delete_btn.svg" alt="modify_btn" /></a>
-              </li>
-            </ul>
+            {% endfor %}
           </div>
         </div>
         <div id="page_btn_wrap">

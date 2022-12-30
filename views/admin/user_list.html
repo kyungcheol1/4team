@@ -13,13 +13,13 @@
         <div class="inner">
           <div id="logo_board">
             <div>
-              <a href="/"><img src="/img/Logo.png" alt="LOGO" /></a>
+              <a href="/admin/userList"><img src="/img/Logo.png" alt="LOGO" /></a>
             </div>
             <div id="board_btn"><a href="/board/list">게시판</a></div>
           </div>
           <div id="login_join">
-            <a id="profile" href="/admin/userEdit">회원정보</a>
-            <a id="logout" href="/">로그아웃</a>
+            <a id="profile" href="/admin/userEdit?id={{cookie}}">회원정보</a>
+            <a id="logout" href="/user/logout">로그아웃</a>
           </div>
         </div>
       </div>

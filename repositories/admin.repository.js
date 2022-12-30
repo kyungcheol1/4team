@@ -20,17 +20,19 @@ exports.getEditUser = async (id) => {
   return result;
 };
 
-if (require.main === module) {
-  (async () => {
-    const [[result]] = await pool.query(`SELECT userLevel FROM user WHERE id="Team4_admin";`);
-    console.log(result);
-  })();
-}
-
 exports.update = async (data, id) => {
   const datas = Object.entries(data)
     .map(([key, val]) => `${key}='${val}'`)
     .join(", ");
-  // await pool.query(`UPDATE user SET ${datas} WHERE id="${id}";`);
-  console.log(datas);
+  await pool.query(`UPDATE user SET ${datas} WHERE id="${id}";`);
+};
+
+exports.findBoard = async () => {
+  const [result] = await pool.query(`SELECT idx, title, writer, content, date_format (registerDate,'%y-%m-%d %h:%i') as registerDate, hit from board order by idx desc;`);
+  return result;
+};
+
+exports.deleteData = async ({ data }) => {
+  const { table, key, value } = data;
+  await pool.query(`DELETE FROM ${table} WHERE ${key}="${value}" `);
 };

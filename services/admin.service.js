@@ -5,7 +5,6 @@ const levelCheck = (userId) => {
   return async () => {
     const [[result]] = await repo.userLevelCheck(userId);
     if (result.userLevel === 3) {
-      console.log(result);
       return true;
     } else return false;
   };
@@ -24,7 +23,6 @@ exports.loginData = async ({ userId, userPw }) => {
       return acc;
     }, {});
   const result = await repo.login(sendData);
-  console.log(result);
   if (result === undefined) return undefined;
   if (result.userLevel === 3) return result;
   return undefined;
@@ -61,6 +59,20 @@ exports.postEditUSer = async ({ userData, cookie, id }) => {
     const editData = { ...rest, birth, phone, tel };
     if (tel === "--") delete editData.tel;
     await repo.update(editData, id);
+    return true;
+  } else return undefined;
+};
+
+exports.bringBoard = async ({ cookie }) => {
+  if (levelCheck(cookie)) {
+    const result = await repo.findBoard();
+    return result;
+  } else return undefined;
+};
+
+exports.deleteData = async ({ cookie, data }) => {
+  if (levelCheck(cookie)) {
+    await repo.deleteData({ data });
     return true;
   } else return undefined;
 };
