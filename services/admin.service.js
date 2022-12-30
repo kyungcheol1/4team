@@ -24,9 +24,10 @@ exports.loginData = async ({ userId, userPw }) => {
       return acc;
     }, {});
   const result = await repo.login(sendData);
-  if (result.userLevel === 3) {
-    return result;
-  } else return undefined;
+  console.log(result);
+  if (result === undefined) return undefined;
+  if (result.userLevel === 3) return result;
+  return undefined;
 };
 
 exports.bringUser = async ({ cookie }) => {
@@ -48,15 +49,18 @@ exports.getEditUser = async ({ id, cookie }) => {
   } else return undefined;
 };
 
-exports.postEditUSer = async ({ userData, cookie }) => {
+exports.postEditUSer = async ({ userData, cookie, id }) => {
   if (levelCheck(cookie)) {
     const { userBirthyy, userBirthmm, userBirthdd, userPhone, userPhoneMiddle, userPhoneLast, userCall, userCallMiddle, userCallLast, ...rest } = userData;
     const birth = [userBirthyy, userBirthmm, userBirthdd].join("-");
     const phone = [userPhone, userPhoneMiddle, userPhoneLast].join("-");
-    delete rest.userRpw;
     let tel = [userCall, userCallMiddle, userCallLast].join("-");
-    if (tel === "--") tel = null;
+    delete rest.rpw;
+
+    if (rest.pw === "") delete rest.pw;
     const editData = { ...rest, birth, phone, tel };
-    console.log(editData);
+    if (tel === "--") delete editData.tel;
+    await repo.update(editData, id);
+    return true;
   } else return undefined;
 };

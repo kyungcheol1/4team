@@ -207,3 +207,20 @@ a {
   height: 50px;
   width: 180px;
 }
+
+#birthFlex {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.phoneFlex {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.phoneFlex > span {
+  display: inline-block;
+  width: 180px;
+}
