@@ -17,9 +17,8 @@ exports.getlist = async (req, res) => {
     let { pageNum } = req.query;
     if (pageNum === undefined) pageNum = 1;
     const [list, count] = await service.list(pageNum);
-    const pagearr = await service.createPageBtn(pageNum);
-    console.log(pagearr);
-    res.render("board/list", { list, count });
+    const pagebtn = await service.createPageBtn(pageNum);
+    res.render("board/list", { list, count, pagebtn });
 };
 
 exports.getwrite = (req, res) => {

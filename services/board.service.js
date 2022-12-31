@@ -52,23 +52,23 @@ exports.list = async (pageNum) => {
 };
 
 exports.createPageBtn = async (pageNum) => {
-    const totalboard = 78;
+    const totalboard = await repository.total();
     const viewlist = 10;
     const viewpagebtn = 5;
     const totalpage = Math.ceil(totalboard / viewlist);
     const count = Math.ceil(pageNum / viewpagebtn) - 1;
 
     let clicklimit = Math.floor(totalpage / viewpagebtn);
-
     let pagearr = [];
 
     for (let i = 0; i <= clicklimit; i++) {
         pagearr.push([]);
-        for (let j = 1; j < totalpage; j++) {
+        for (let j = 1; j <= totalpage; j++) {
             if (Math.ceil(j / viewpagebtn) - 1 === i) pagearr[i].push(j);
         }
     }
 
-    return pagearr[count];
+    const pagebtn = { a: pagearr[count][0], b: pagearr[count][1], c: pagearr[count][2], d: pagearr[count][3], e: pagearr[count][4] };
+    return pagebtn;
 };
 

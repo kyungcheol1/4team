@@ -2,41 +2,53 @@ const totalboards = document.querySelector("#totalboards");
 const prebtn = document.querySelector("#pre");
 const next = document.querySelector("#next");
 const query = window.location.search;
-// const pagenumber = query.split("=")[1];
-// const totalboard = 114;
+const atag = document.querySelectorAll("#paging > ul > li > a");
+const pagenumber = query.split("=")[1];
 
-// const viewlist = 10;
-// const viewpagebtn = 5;
-// const totalpage = Math.ceil(totalboard / viewlist);
+for (let i = 1; i < atag.length; i++) {
+    if (pagenumber === atag[i].innerHTML) {
+        atag[i].style.fontWeight = "bold";
+    }
+}
 
-// let clicklimit = Math.floor(totalpage / viewpagebtn);
+const totalboard = totalboards.innerHTML.split(":")[1];
 
-// let pagearr = [];
+const viewlist = 10;
+const viewpagebtn = 5;
+const totalpage = Math.ceil(totalboard / viewlist);
 
-// for (let i = 0; i <= clicklimit; i++) {
-//     pagearr.push([]);
-//     for (let j = 1; j <= viewpagebtn; j++) {
-//         pagearr[i].push(i * viewpagebtn + j);
-//     }
-// }
-// let count = 0;
-// prebtn.addEventListener("click", (e) => {
-//     if (count === 0) {
-//         e.preventDefault();
-//         alert("맨앞페이지 입니다.");
-//         return (count = 0);
-//     }
-//     --count;
-//     console.log(pagearr[count]);
-// });
+const clicklimit = Math.ceil(totalpage / viewpagebtn);
 
-// next.addEventListener("click", (e) => {
-//     ++count;
-//     if (count > clicklimit) {
-//         e.preventDefault();
-//         alert("맨뒷페이지 입니다.");
-//         return (count = clicklimit);
-//     }
-//     console.log(pagearr[count]);
-// });
+let pagearr = [];
+
+prebtn.addEventListener("click", async (e) => {
+    let count = Math.floor(totalpage / viewpagebtn);
+
+    --count;
+
+    if (count === 0) {
+        e.preventDefault();
+        alert("맨앞페이지 입니다.");
+        return (count = 1);
+    } else {
+        window.location.href = `http://localhost:3000/board/list?pageNum=${1 + 5 * (count - 1)}`;
+    }
+    console.log(count);
+});
+
+next.addEventListener("click", async (e) => {
+    let count = Math.floor(totalpage / viewpagebtn);
+
+    ++count;
+
+    if (count > clicklimit) {
+        e.preventDefault();
+        alert("맨뒷페이지 입니다.");
+        return (count = clicklimit);
+    } else {
+        window.location.href = `http://localhost:3000/board/list?pageNum=${1 + 5 * (count - 1)}`;
+    }
+
+    console.log(count);
+});
 
