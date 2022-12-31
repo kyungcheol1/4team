@@ -12,7 +12,7 @@
       <div id="header">
         <div class="inner">
           <div id="head">
-            <a href="">
+            <a href="javascript:history.back();">
               <img src="/img/Logo.png" alt="" />
             </a>
           </div>
@@ -46,35 +46,35 @@
                   </li>
                   <li id="user_id">
                     <p>아이디</p>
-                    <input type="text" id="userId" name="id" data-span="idSpan" placeholder="새로운 이름을 입력해주세요" value="{{result.id}}" />
+                    <input type="text" id="userId" name="id" data-span="idSpan" data-state="userId" placeholder="새로운 이름을 입력해주세요" value="{{result.id}}" />
                     <button id="id" type="submit">중복확인</button>
                     <span></span>
                   </li>
                   <li>
                     <p>비밀번호</p>
-                    <input type="password" id="userPw" class="pw" name="pw" data-span="pwSpan" placeholder="새로운 비밀번호를 입력해주세요" />
+                    <input type="password" id="userPw" class="pw" name="pw" data-span="pwSpan" data-state="userPw" placeholder="새로운 비밀번호를 입력해주세요" />
                     <span></span>
                   </li>
                   <li>
                     <p>비밀번호 확인</p>
-                    <input type="password" id="userRpw" class="pw" name="rpw" data-span="rpwSpan" placeholder="비밀번호를 다시 입력해주세요" />
+                    <input type="password" id="userRpw" class="pw" name="rpw" data-span="rpwSpan" data-state="userRpw" placeholder="비밀번호를 다시 입력해주세요" />
                     <span></span>
                   </li>
                   <li id="user_name">
                     <p>이름</p>
-                    <input type="text" id="userName" name="userName" data-span="nameSpan" placeholder="이름을 입력해주세요" value="{{result.userName}}" />
+                    <input type="text" id="userName" name="userName" data-span="nameSpan" data-state="userName" placeholder="이름을 입력해주세요" value="{{result.userName}}" />
                     <span></span>
                   </li>
                   <li class="userNick">
                     <p>닉네임</p>
-                    <input type="text" id="userNickName" name="nickName" data-span="nickNameSpan" placeholder="닉네임을 입력해주세요" value="{{result.nickName}}" />
+                    <input type="text" id="userNickName" name="nickName" data-span="nickNameSpan" data-state="userNickName" placeholder="닉네임을 입력해주세요" value="{{result.nickName}}" />
                     <button id="nickName" type="submit">중복확인</button>
                     <span></span>
                   </li>
                   <li id="userBirth">
                     <p>생년월일</p>
                     <div>
-                      <input type="text" id="userBirthyy" name="userBirthyy" data-span="birthyySpan" placeholder="년(4자)" value="{{result.userBirthyy}}" />
+                      <input type="text" id="userBirthyy" name="userBirthyy" data-span="birthyySpan" data-state="userBirthyy" placeholder="년(4자)" value="{{result.userBirthyy}}" />
                       <input type="hidden" id="userBirthmmCheck" value="{{result.userBirthmm}}" />
                       <select name="userBirthmm" id="userBirthmm">
                         <option value="01">1월</option>
@@ -90,7 +90,7 @@
                         <option value="11">11월</option>
                         <option value="12">12월</option>
                       </select>
-                      <input type="text" id="userBirthdd" name="userBirthdd" data-span="birthddSpan" placeholder="일" value="{{result.userBirthdd}}" />
+                      <input type="text" id="userBirthdd" name="userBirthdd" data-span="birthddSpan" data-state="userBirthdd" placeholder="일" value="{{result.userBirthdd}}" />
                     </div>
                     <div id="birthFlex">
                       <span></span>
@@ -108,9 +108,9 @@
                   <li class="phone">
                     <p>휴대전화</p>
                     <div>
-                      <input type="text" id="userPhone" name="userPhone" data-span="phoneSpan" value="{{result.userPhone}}" />
-                      <input type="text" id="userPhoneMiddle" name="userPhoneMiddle" data-span="phoneMiddleSpan" value="{{result.userPhoneMiddle}}" />
-                      <input type="text" id="userPhoneLast" name="userPhoneLast" data-span="phoneLastSpan" value="{{result.userPhoneLast}}" />
+                      <input type="text" id="userPhone" name="userPhone" data-span="phoneSpan" data-state="userPhone" value="{{result.userPhone}}" />
+                      <input type="text" id="userPhoneMiddle" name="userPhoneMiddle" data-span="phoneMiddleSpan" data-state="userPhoneMiddle" value="{{result.userPhoneMiddle}}" />
+                      <input type="text" id="userPhoneLast" name="userPhoneLast" data-span="phoneLastSpan" data-state="userPhoneLast" value="{{result.userPhoneLast}}" />
                     </div>
                     <div class="phoneFlex">
                       <span></span>
@@ -121,9 +121,9 @@
                   <li class="phone">
                     <p>일반전화(선택)</p>
                     <div>
-                      <input type="text" id="userCall" name="userCall" data-span="callSpan" value="{{result.userCall}}" />
-                      <input type="text" id="userCallMiddle" name="userCallMiddle" data-span="callMiddleSpan" value="{{result.userCallMiddle}}" />
-                      <input type="text" name="userCallLast" data-span="callLastSpan" value="{{result.userCallLast}}" />
+                      <input type="text" id="userCall" class="call" name="userCall" data-span="callSpan" data-state="userCall" value="{{result.userCall}}" />
+                      <input type="text" id="userCallMiddle" class="call" name="userCallMiddle" data-span="callMiddleSpan" data-state="userCallMiddle" value="{{result.userCallMiddle}}" />
+                      <input type="text" id="userCallLast" name="userCallLast" class="call" data-span="callLastSpan" data-state="userCallLast" value="{{result.userCallLast}}" />
                     </div>
                     <div class="phoneFlex">
                       <span></span>
@@ -131,8 +131,9 @@
                       <span></span>
                     </div>
                   </li>
-                  <li>
+                  <li id="btns">
                     <button id="modifyBtn" type="submit">수정하기</button>
+                    <button id="deleteBtn"><a href="/admin/delete/?id={{result.id}}">삭제하기</a></button>
                   </li>
                 </ul>
               </form>

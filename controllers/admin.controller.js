@@ -12,7 +12,7 @@ exports.getUser = async (req, res) => {
   const cookie = req.cookies.id;
   const result = await service.bringUser({ cookie });
   if (result === undefined) return res.send("<script>alert('잘못된 접근입니다.');location.href=`/admin`</script>");
-  res.render("admin/user_list.html", { result });
+  res.render("admin/user_list.html", { result, cookie });
 };
 
 exports.getEditUser = async (req, res) => {
@@ -30,5 +30,25 @@ exports.postEditUser = async (req, res) => {
   const userData = req.body;
   const result = await service.postEditUSer({ userData, cookie, id });
   if (result === undefined) return res.send("<script>alert('잘못된 접근입니다.');location.href=`/admin`</script>");
-  res.send("test");
+  res.redirect("/admin/userList");
+};
+
+exports.getBoardList = async (req, res) => {
+  const cookie = req.cookies.id;
+  const result = await service.bringBoard({ cookie });
+  if (result === undefined) return res.send("<script>alert('잘못된 접근입니다.);location.href=`/admin`</script>");
+  res.render("admin/board_list.html", { result, cookie });
+};
+
+exports.deleteData = async (req, res) => {
+  const cookie = req.cookies.id;
+  const query = req.query;
+  const [[key, value]] = Object.entries(query);
+  let table = "";
+  table = key === "id" ? "user" : "board";
+  const data = { table, key, value };
+  const result = await service.deleteData({ cookie, data });
+  if (result === undefined) return res.send("<script>alert('잘못된 접근입니다.);location.href=`/admin`</script>");
+
+  res.redirect(`/admin/${table}List`);
 };

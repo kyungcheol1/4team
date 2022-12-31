@@ -14,8 +14,8 @@ router.get("/userEdit", controller.getEditUser);
 
 router.post("/userEdit", controller.postEditUser);
 
-router.get("/boardList", (req, res) => {
-  res.render("admin/board_list.html");
-});
+router.get("/boardList", controller.getBoardList);
+
+router.get("/delete", controller.deleteData);
 
 module.exports = router;

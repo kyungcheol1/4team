@@ -121,9 +121,11 @@ body {
   padding-top: 15px;
   padding-bottom: 15px;
   border-radius: 10px 10px 0 0;
+  color: #fff;
+  font-weight: bold;
 }
 
-.board_id {
+.board_idx {
   width: 80px;
 }
 .board_title {
