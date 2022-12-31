@@ -74,19 +74,24 @@
                     <!-- 페이징 -->
                     <div id="paging">
                         <ul>
-                            <li><a href="#">◀</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">▶</a></li>
+                            <li>
+                                <a href="#"><button id="pre">◀</button></a>
+                            </li>
+                            <li><a href="/board/list?pageNum={{pagebtn.a}}">{{pagebtn.a}}</a></li>
+                            <li><a href="/board/list?pageNum={{pagebtn.b}}">{{pagebtn.b}}</a></li>
+                            <li><a href="/board/list?pageNum={{pagebtn.c}}">{{pagebtn.c}}</a></li>
+                            <li><a href="/board/list?pageNum={{pagebtn.d}}">{{pagebtn.d}}</a></li>
+                            <li><a href="/board/list?pageNum={{pagebtn.e}}">{{pagebtn.e}}</a></li>
+                            <li>
+                                <a href="#"><button id="next">▶</button></a>
+                            </li>
                         </ul>
                     </div>
                     <!-- 페이징 끝 -->
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src="/js/board/list.js"></script>
     </body>
-    <script type="text/javascript" src="/js/board/list.js"></script>
 </html>
+

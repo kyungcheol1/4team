@@ -14,8 +14,12 @@ exports.enter = (req, res, next) => {
 };
 
 exports.getlist = async (req, res) => {
-    const list = await service.list();
-    res.render("board/list", { list });
+    let { pageNum } = req.query;
+    if (pageNum === undefined) pageNum = 1;
+    const [list, count] = await service.list(pageNum);
+    const pagearr = await service.createPageBtn(pageNum);
+    console.log(pagearr);
+    res.render("board/list", { list, count });
 };
 
 exports.getwrite = (req, res) => {
@@ -72,3 +76,4 @@ exports.postreply = async (req, res) => {
     const list = await service.replylist(reply, writer, pageidx);
     res.redirect(`/board/view?index=${list}`);
 };
+
