@@ -16,7 +16,7 @@ exports.view = async (index) => {
 };
 
 exports.findUser = async (idx) => {
-    const result = await repository.findUser(idx); // 해당글의 작성자 스트링
+    const result = await repository.findUser(idx);
     return result;
 };
 
@@ -29,8 +29,12 @@ exports.delete = async (idx) => {
     const result = await repository.delete(idx);
 };
 
-exports.replylist = async (writer, reply) => {
-    const list = await repository.insertreply(writer, reply);
-    return list;
+exports.reply = async (pageidx) => {
+    const result = await repository.replyAll(pageidx);
+    return result;
 };
 
+exports.replylist = async (reply, writer, pageidx) => {
+    const list = await repository.insertreply(reply, writer, pageidx);
+    return list;
+};
