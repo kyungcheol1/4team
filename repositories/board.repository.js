@@ -44,3 +44,19 @@ exports.insertreply = async (reply, writer, pageidx) => {
     const insert = await pool.query(`INSERT INTO reply(content, writer, postingNum) value("${reply.content}","${writer.id}","${pageidx}")`);
     return pageidx;
 };
+
+exports.boards = async ({ viewlimit, limitlist }) => {
+    const [[totalboards]] = await pool.query(`SELECT COUNT(*) FROM board`);
+    const [count] = Object.values(totalboards);
+    const [list] = await pool.query(
+        `SELECT idx, title, writer, content, date_format (registerDate,'%y-%m-%d %h:%i') as registerDate, hit FROM board order by idx desc LIMIT ${limitlist}, ${viewlimit}`
+    );
+    return [list, { count }];
+};
+
+exports.total = async () => {
+    const [[totalboards]] = await pool.query(`SELECT COUNT(*) FROM board`);
+    const [count] = Object.values(totalboards);
+    return count;
+};
+

@@ -1,4 +1,8 @@
 /* 컨텐츠 */
+a {
+    text-decoration: none;
+    color: #000;
+}
 #boardContent {
     width: 1180px;
     border-radius: 7px;
@@ -92,3 +96,4 @@
     color: #9a62e6 !important;
 }
 /* 페이징 끝 */
+
