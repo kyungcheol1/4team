@@ -72,3 +72,38 @@
     line-height: 26px;
     color: #d2daff;
 }
+
+/* 입력하면 보이는 댓글창 */
+
+#reply > div {
+    width: 95%;
+    margin: 0 auto;
+}
+
+#reply > div > ul > li {
+    height: 40px;
+    border-top: #d2daff solid 1px;
+}
+
+#reply > div > ul > li:first-child {
+    border: none;
+}
+
+#reply > div > ul > li > span {
+    padding-top: 5px;
+    display: inline-block;
+}
+
+#reDate {
+    float: right;
+}
+
+#reWriter {
+    width: 10%;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+#reContent {
+    width: 70%;
+}
