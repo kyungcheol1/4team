@@ -59,4 +59,3 @@ exports.total = async () => {
     const [count] = Object.values(totalboards);
     return count;
 };
-

@@ -195,7 +195,7 @@ const buttonHandler = (e) => {
     if (userspan.usernickspan.innerHTML !== "생성이 가능합니다.") {
         alert("닉네임양식 확인과 중복체크를 완료해주세요");
         uservalue.userNickname.focus();
-    } else if (phone && phonemid && phonelast && birthdd && birthmm && birthyy && name && pwRpw && pw) form.submit();
+    } else if (phone && phonemid && phonelast && birthdd && birthyy && name && pwRpw && pw) form.submit();
 };
 
 nickcheck.addEventListener("click", nickcheckHandler);
