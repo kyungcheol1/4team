@@ -62,15 +62,18 @@
                         <div id="reply">
                             <span><img src="/img/Vector.png" /> 댓글 0개</span><br />
                             <br />
-                            관리자
+                            {{list.cookies}}
                             <br />
                             <input type="text" name="reply" placeholder="댓글 입력하기" />
                             <div>
                                 <br />
                                 <ul>
-                                    <li>안농하세용</li>
                                     {% for item in reply %}
-                                    <li>{{item.content}} {{item.writer}} {{item.registerDate}}</li>
+                                    <li>
+                                        <span id="reWriter">{{item.writer}}</span>
+                                        <span id="reContent">{{item.content}}</span>
+                                        <span id="reDate">{{item.registerDate}}</span>
+                                    </li>
                                     {% endfor %}
                                 </ul>
                             </div>
