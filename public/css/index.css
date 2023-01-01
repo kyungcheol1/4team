@@ -181,16 +181,6 @@ a {
   justify-content: space-between;
 }
 
-.member_task {
-  content: "";
-  position: absolute;
-  width: 780px;
-  height: 380px;
-  background-color: red;
-  border-radius: 10px;
-  right: 0px;
-}
-
 #member_box {
   width: 380px;
   height: 380px;
@@ -246,7 +236,7 @@ a {
   font-weight: bold;
 }
 
-#popular_box > :not(:nth-child(4)) {
+#popular_box > :not(:last-child) {
   border-bottom: 1px solid #d2daff;
 }
 
@@ -268,6 +258,48 @@ a {
 #popular_box > .pupular_contents > #views {
   text-align: center;
   width: 20%;
+}
+
+.member_task_box {
+  position: absolute;
+  width: 780px;
+  height: 380px;
+  background-color: #fff;
+  border-radius: 10px;
+  right: 0px;
+  font-size: 30px;
+  font-weight: bold;
+  visibility: hidden;
+}
+
+.member_task_box.active {
+  visibility: visible;
+}
+
+.member_task_header {
+  display: flex;
+  justify-content: space-between;
+  padding: 26px 20px;
+  height: 95px;
+  border-radius: 10px 10px 0 0;
+  background-color: #b1b2ff;
+  color: #fff;
+}
+
+.exit {
+  font-size: 45px;
+  line-height: 42px;
+  color: #9a62e6;
+  cursor: pointer;
+}
+.task {
+  height: 95px;
+  padding: 26px 20px;
+  font-size: 20px;
+}
+
+.task > b {
+  color: #9a62e6;
 }
 
 #skill {

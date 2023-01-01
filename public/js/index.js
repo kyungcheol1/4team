@@ -31,7 +31,7 @@ const moveSlide = (c) => {
   count += -1 * c;
   translate += imgWidth * c;
   slide.style.transform = `translateX(${translate}px)`;
-  slide.style.transition = `all ${transTime}ms esae`;
+  slide.style.transition = `all ${transTime}ms ease`;
 };
 
 const sliding = () => {
@@ -72,7 +72,6 @@ const preBtnHandler = (e) => {
   if (running === true) return;
   startStopBtn.classList.add("stop");
   clearInterval(intevalId);
-  console.log(count);
   moveSlide(-1);
   if (count === slideCloneImgs.length - 1) {
     setTimeout(() => {

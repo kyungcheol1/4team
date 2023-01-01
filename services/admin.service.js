@@ -76,3 +76,17 @@ exports.deleteData = async ({ cookie, data }) => {
     return true;
   } else return undefined;
 };
+
+exports.memberTask = ({ member }) => {
+  const parts = {
+    0: { tasks: "user 페이지", detail: "유저 회원가입, 환영 페이지, 로그인, 프로필 수정, 유저 중복체크 ,게시판  페이징 구현", github: "https://github.com/kyungcheol1" },
+    1: { tasks: "main 페이지, admin 페이지", detail: "메인 페이지, 관리자 로그인, 유저 관리, 유저 수정, 게시글 관리 구현", github: "https://github.com/cloudcoke" },
+    2: { tasks: "board 페이지", detail: "게시판 목록, 게시글 목록 제한, 게시글 열람, 게시글 작성, 수정, 삭제 구현", github: "https://github.com/mooddddd" },
+  };
+  return parts[member];
+};
+
+exports.popularContent = async () => {
+  const result = await repo.popularContent();
+  return result;
+};
