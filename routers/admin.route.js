@@ -18,4 +18,8 @@ router.get("/boardList", controller.getBoardList);
 
 router.get("/delete", controller.deleteData);
 
+router.post("/memberTask", controller.memberTasks);
+
+router.post("/popularContent", controller.popularContent);
+
 module.exports = router;

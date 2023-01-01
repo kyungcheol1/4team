@@ -52,3 +52,14 @@ exports.deleteData = async (req, res) => {
 
   res.redirect(`/admin/${table}List`);
 };
+
+exports.memberTasks = (req, res) => {
+  const data = req.body;
+  const result = service.memberTask(data);
+  res.json(result);
+};
+
+exports.popularContent = async (req, res) => {
+  const result = await service.popularContent();
+  res.json(result);
+};

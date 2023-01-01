@@ -28,11 +28,16 @@ exports.update = async (data, id) => {
 };
 
 exports.findBoard = async () => {
-  const [result] = await pool.query(`SELECT idx, title, writer, content, date_format (registerDate,'%y-%m-%d %h:%i') as registerDate, hit from board order by idx desc;`);
+  const [result] = await pool.query(`SELECT idx, title, writer, content, date_format (registerDate,'%y-%m-%d %h:%i') AS registerDate, hit FROM board ORDER BY idx DESC;`);
   return result;
 };
 
 exports.deleteData = async ({ data }) => {
   const { table, key, value } = data;
   await pool.query(`DELETE FROM ${table} WHERE ${key}="${value}" `);
+};
+
+exports.popularContent = async () => {
+  const [result] = await pool.query(`SELECT idx, title, writer, date_format (registerDate,'%y-%m-%d') AS registerDate, hit FROM board ORDER BY hit DESC LIMIT 3;`);
+  return result;
 };

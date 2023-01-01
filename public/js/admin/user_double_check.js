@@ -32,7 +32,7 @@ const state = {
   userCallLast: true,
 };
 
-const duplicateCheck = (e) => {
+const duplicateCheck = async (e) => {
   const idORNickName = { id: "아이디", nickName: "닉네임" };
   e.preventDefault();
   const button = e.target;
@@ -44,34 +44,35 @@ const duplicateCheck = (e) => {
     alert(`올바른 ${idORNickName[button.id]} 형식이 아닙니다.`);
     state[button.id] = false;
   } else {
-    const result = checking(data);
+    const result = await checking(data);
 
-    result.then((res) => {
-      if (!res) {
-        input.focus();
-        span.style.color = "red";
-        span.innerHTML = `중복 ${idORNickName[button.id]} 입니다.`;
-        state[button.id] = false;
-      } else {
-        span.style.color = "green";
-        span.innerHTML = "생성이 가능합니다.";
-        state[button.id] = true;
-      }
-    });
+    if (!result) {
+      input.focus();
+      span.style.color = "red";
+      span.innerHTML = `중복 ${idORNickName[button.id]} 입니다.`;
+      state[button.id] = false;
+    } else {
+      span.style.color = "green";
+      span.innerHTML = "생성이 가능합니다.";
+      state[button.id] = true;
+    }
   }
 };
 
-const checking = async (data) => {
-  const respone = await fetch("http://localhost:3000/user/join/idcheck", {
+const checking = (data) => {
+  return fetch("http://localhost:3000/user/join/idcheck", {
     method: "POST",
     headers: {
       Accpet: "application/json",
       "Content-Type": "application/json;charset=utf-8",
     },
     body: JSON.stringify(data),
-  });
-  const result = await respone.json();
-  return result.check;
+  })
+    .then((res) => res.json())
+    .then((answer) => {
+      const result = answer.check;
+      return result;
+    });
 };
 
 checkId.addEventListener("click", duplicateCheck);
