@@ -18,12 +18,11 @@ const viewpagebtn = 5;
 const totalpage = Math.ceil(totalboard / viewlist);
 
 const clicklimit = Math.ceil(totalpage / viewpagebtn);
+let count = Math.ceil(pagenumber / viewpagebtn);
 
 let pagearr = [];
 
 prebtn.addEventListener("click", async (e) => {
-    let count = Math.floor(totalpage / viewpagebtn);
-
     --count;
 
     if (count === 0) {
@@ -37,8 +36,6 @@ prebtn.addEventListener("click", async (e) => {
 });
 
 next.addEventListener("click", async (e) => {
-    let count = Math.floor(totalpage / viewpagebtn);
-
     ++count;
 
     if (count > clicklimit) {
@@ -51,4 +48,6 @@ next.addEventListener("click", async (e) => {
 
     console.log(count);
 });
+
+console.log(count);
 
