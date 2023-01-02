@@ -14,9 +14,12 @@ cretereply.addEventListener("keydown", async (e) => {
                 Accept: "application/json",
                 "Content-Type": "application/json;charset=utf-8",
             },
+            redirect: "follow",
             body: JSON.stringify(message),
         });
+        if (respone.redirected) window.location.href = `http://localhost:3000/board/view/?index=${idx}`;
     } else {
         return;
     }
 });
+
