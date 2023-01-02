@@ -24,7 +24,7 @@
                     </h1>
                     <div id="menu">
                         <ul>
-                            <li><a href="/board/list">게시판</a></li>
+                            <li><a href="/board/list?pageNum=1">게시판</a></li>
                         </ul>
                     </div>
                     <div id="user">
@@ -57,7 +57,7 @@
                             <a id="deleteBtn">삭제</a>
                             {%endif%}
                             <div id="content">{{list.content}}</div>
-                            <button id="listBnt" onclick="location.href='/board/list'">글목록</button>
+                            <button id="listBnt" onclick="location.href='javascript:history.back();'">글목록</button>
                         </div>
                         <div id="reply">
                             <span><img src="/img/Vector.png" /> 댓글 0개</span><br />

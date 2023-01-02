@@ -24,7 +24,6 @@ let pagearr = [];
 
 prebtn.addEventListener("click", async (e) => {
     --count;
-
     if (count === 0) {
         e.preventDefault();
         alert("맨앞페이지 입니다.");
@@ -32,12 +31,10 @@ prebtn.addEventListener("click", async (e) => {
     } else {
         window.location.href = `http://localhost:3000/board/list?pageNum=${1 + 5 * (count - 1)}`;
     }
-    console.log(count);
 });
 
 next.addEventListener("click", async (e) => {
     ++count;
-
     if (count > clicklimit) {
         e.preventDefault();
         alert("맨뒷페이지 입니다.");
@@ -45,9 +42,5 @@ next.addEventListener("click", async (e) => {
     } else {
         window.location.href = `http://localhost:3000/board/list?pageNum=${1 + 5 * (count - 1)}`;
     }
-
-    console.log(count);
 });
-
-console.log(count);
 
