@@ -5,7 +5,7 @@
 # ![Logo](https://user-images.githubusercontent.com/83705076/210174987-e68d2566-0258-4f93-be88-6ea95ab71fa2.svg)
 
 # 작업 내용
-<img width="600" src="https://user-images.githubusercontent.com/83705076/210191756-ca45c9eb-b20b-4aa7-8d22-9cf1e0d2ea96.gif">
+<a href="https://youtu.be/Tqr8G8JJrAg"><img width="600" src="https://user-images.githubusercontent.com/83705076/210191756-ca45c9eb-b20b-4aa7-8d22-9cf1e0d2ea96.gif"></a>
 
 GIF를 클릭하시면 영상으로 보실 수 있습니다.
 
