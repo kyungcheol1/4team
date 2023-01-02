@@ -42,7 +42,7 @@ const duplicateCheck = async (e) => {
   data[button.id] = input.value;
   if (span.innerHTML !== "중복체크를 해주세요" && span.innerHTML !== "생성이 가능합니다.") {
     alert(`올바른 ${idORNickName[button.id]} 형식이 아닙니다.`);
-    state[button.id] = false;
+    state[input.id] = false;
   } else {
     const result = await checking(data);
 
@@ -50,11 +50,11 @@ const duplicateCheck = async (e) => {
       input.focus();
       span.style.color = "red";
       span.innerHTML = `중복 ${idORNickName[button.id]} 입니다.`;
-      state[button.id] = false;
+      state[input.id] = false;
     } else {
       span.style.color = "green";
       span.innerHTML = "생성이 가능합니다.";
-      state[button.id] = true;
+      state[input.id] = true;
     }
   }
 };
@@ -149,7 +149,8 @@ const [pw, rpw] = document.querySelectorAll(".pw");
 const pwCheck = (e) => {
   if (pw.value === "" && rpw.value === "") {
     spanObj["rpwSpan"].innerHTML = "";
-    state[e.target.id] = true;
+    state["userPw"] = true;
+    state["userRpw"] = true;
   } else if (e.target.value.length < 5) {
     spanObj["rpwSpan"].style.color = "red";
     spanObj["rpwSpan"].innerHTML = message.pwLenght;
@@ -160,7 +161,8 @@ const pwCheck = (e) => {
     state[e.target.id] = false;
   } else {
     spanObj["rpwSpan"].innerHTML = "";
-    state[e.target.id] = true;
+    state["userPw"] = true;
+    state["userRpw"] = true;
   }
 };
 
@@ -210,14 +212,14 @@ const callInput = (e) => {
 for (let i = 0; i < callList.length; i++) {
   callList[i].addEventListener("input", callInput);
 }
-const inputStateList = [document.querySelectorAll('input:not([type="hidden"])')];
+const inputStateList = document.querySelectorAll('input:not([type="hidden"])');
 
 const form = document.querySelector("form");
 
 const modify = (e) => {
   e.preventDefault();
   let loc = Object.values(state).indexOf(false);
-  if (loc < 0) form.submit();
+  if (loc < 0) return form.submit();
   inputStateList[loc].focus();
 };
 modifyBtn.addEventListener("click", modify);
