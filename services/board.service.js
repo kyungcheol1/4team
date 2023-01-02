@@ -56,15 +56,16 @@ exports.createPageBtn = async (pageNum) => {
     const viewlist = 10;
     const viewpagebtn = 5;
     const totalpage = Math.ceil(totalboard / viewlist);
-    const count = Math.ceil(pageNum / viewpagebtn) - 1;
+    const count = Math.floor(pageNum / viewpagebtn);
 
     let clicklimit = Math.floor(totalpage / viewpagebtn);
     let pagearr = [];
 
     for (let i = 0; i <= clicklimit; i++) {
         pagearr.push([]);
-        for (let j = 1; j <= totalpage; j++) {
-            if (Math.ceil(j / viewpagebtn) - 1 === i) pagearr[i].push(j);
+        for (let j = 1; j < 6; j++) {
+            let k = j + i * 5;
+            if (k <= totalpage) pagearr[i].push(k);
         }
     }
 

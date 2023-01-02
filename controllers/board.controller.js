@@ -15,7 +15,6 @@ exports.enter = (req, res, next) => {
 
 exports.getlist = async (req, res) => {
     let { pageNum } = req.query;
-    if (pageNum === undefined) pageNum = 1;
     const [list, count] = await service.list(pageNum);
     const pagebtn = await service.createPageBtn(pageNum);
     res.render("board/list", { list, count, pagebtn });
@@ -65,7 +64,7 @@ exports.postmodify = async (req, res) => {
 exports.getdelete = async (req, res) => {
     const idx = req.query.index;
     const deletevalue = await service.delete(idx);
-    res.redirect("/board/list");
+    res.redirect("/board/list?pageNum=1");
 };
 
 exports.postreply = async (req, res) => {

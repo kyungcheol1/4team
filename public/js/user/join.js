@@ -98,8 +98,20 @@ const BirthyyHandler = (val, span, reg, messege) => {
     val.addEventListener("input", () => {
         if (!reg.test(val.value)) {
             span.innerHTML = `${messege}`;
-        } else if (val.value < 1900 || val.value > date.getFullYear()) {
+        } else if (val.value < 1900 || val.value > date.getFullYear() - 1) {
             span.innerHTML = "연도를 확인해주세요";
+        } else {
+            span.innerHTML = "";
+        }
+    });
+};
+
+const BirthddHandler = (val, span, reg, messege) => {
+    val.addEventListener("input", () => {
+        if (!reg.test(val.value)) {
+            span.innerHTML = `${messege}`;
+        } else if (val.value < 0 || val.value > 31) {
+            span.innerHTML = "일자를 확인해주세요";
         } else {
             span.innerHTML = "";
         }
@@ -111,11 +123,10 @@ checkHandler(uservalue.userNickname, userspan.usernickspan, reg.nickreg[0], reg.
 pwcheckHandler();
 inputHandler(uservalue.userName, userspan.usernamespan, reg.namereg[0], reg.namereg[1]);
 BirthyyHandler(uservalue.userBirthyy, userspan.userBirthyyspan, reg.yyreg[0], reg.yyreg[1]);
-inputHandler(uservalue.userBirthdd, userspan.userBirthddspan, reg.ddreg[0], reg.ddreg[1]);
+BirthddHandler(uservalue.userBirthdd, userspan.userBirthddspan, reg.ddreg[0], reg.ddreg[1]);
 inputHandler(uservalue.userPhone, userspan.userPhonespan, reg.phoneheadreg[0], reg.phoneheadreg[1]);
 inputHandler(uservalue.userPhoneMiddle, userspan.userPhoneMiddlespan, reg.phonemidreg[0], reg.phonemidreg[1]);
 inputHandler(uservalue.userPhoneLast, userspan.userPhoneLastspan, reg.phonemidreg[0], reg.phonemidreg[1]);
-
 inputHandler(uservalue.userCall, userspan.userCallspan, reg.phoneheadreg[0], reg.phoneheadreg[1]);
 inputHandler(uservalue.userCallMiddle, userspan.userCallMiddlespan, reg.phonemidreg[0], reg.phonemidreg[1]);
 inputHandler(uservalue.userCallLast, userspan.userCallLastspan, reg.phonemidreg[0], reg.phonemidreg[1]);
@@ -194,8 +205,11 @@ const buttonHandler = (e) => {
 
     if (userspan.usernickspan.innerHTML !== "생성이 가능합니다.") {
         alert("닉네임양식 확인과 중복체크를 완료해주세요");
-        uservalue.userNickname.focus();
-    } else if (phone && phonemid && phonelast && birthdd && birthyy && name && pwRpw && pw) form.submit();
+    } else if (phone && phonemid && phonelast && birthdd && birthyy && name && pwRpw && pw) {
+        form.submit();
+    } else {
+        alert("필수정보를 입력해주세요");
+    }
 };
 
 nickcheck.addEventListener("click", nickcheckHandler);
